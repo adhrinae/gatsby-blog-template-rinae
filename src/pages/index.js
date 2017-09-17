@@ -1,13 +1,61 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React, { Component } from 'react';
+import Link from 'gatsby-link';
 
-const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
-)
+import Hero from '../components/Hero';
 
-export default IndexPage
+class IndexPage extends Component {
+  render() {
+    const postsData = this.props.data.allMarkdownRemark.edges;
+    const posts = postsData.map(({ node: post }) => (
+      <div
+        className="box"
+        style={{ marginTop: "1rem" }}
+      >
+        <p>
+          <strong>{post.frontmatter.title}</strong>{" "}<small>{post.frontmatter.date}</small>
+          {" "}
+          <span className="tag is-info">{post.frontmatter.category}</span>
+        </p>
+        <p>{post.excerpt}</p>
+      </div>
+    ));
+
+    return (
+      <div>
+        <Hero
+          title="Welcome to my writing playground"
+          subtitle="about Translation, Ruby, Javascript, Practical Dev etc."
+        />
+
+        <div className="container">
+          {posts}
+        </div>
+      </div>
+    );
+  }
+}
+
+
+export default IndexPage;
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    allMarkdownRemark(
+      limit: 1000,
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          frontmatter {
+            title
+            category
+            date(formatString: "YYYY/MM/DD")
+            path
+          }
+        }
+      }
+    }
+  }
+`;

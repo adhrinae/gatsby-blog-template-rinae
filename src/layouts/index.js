@@ -15,7 +15,7 @@ const Header = ({ toggled, handleToggled }) => (
 
       <div
         className={toggled ? 'navbar-burger is-active' : 'navbar-burger'}
-        onClick={handleToggled}
+        onClick={() => handleToggled()}
       >
         <span></span>
         <span></span>
@@ -54,7 +54,7 @@ class TemplateWrapper extends Component {
           toggled={this.state.toggled}
           handleToggled={this.handleToggled}
         />
-        <div className="container">
+        <div>
           {children()}
         </div>
       </div>
