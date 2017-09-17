@@ -1,64 +1,74 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
-import './index.css'
+import 'typeface-noto-sans';
+import 'bulma';
 
-const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
+const Header = ({ toggled, handleToggled }) => (
+  <nav className="navbar is-info" role="navigation" aria-label="main navigation">
+    <div className="navbar-brand">
+      <Link to="/" className="navbar-item navbar-title">
+        Rinae's playground
+      </Link>
+
+      <div
+        className={toggled ? 'navbar-burger is-active' : 'navbar-burger'}
+        onClick={handleToggled}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-  </div>
-)
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="Gatsby Default Starter"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
+
+    <div className={toggled ? 'navbar-menu is-active' : 'navbar-menu'}>
+      <div className="navbar-end">
+        <Link className="navbar-item" to="/about">About Me</Link>
+        <Link className="navbar-item" to="/posts">Posts</Link>
+        <Link className="navbar-item" to="/categories">Categories</Link>
+        <Link className="navbar-item" to="/tags">Tags</Link>
+      </div>
     </div>
-  </div>
-)
+  </nav>
+);
+
+class TemplateWrapper extends Component {
+  state = {
+    toggled: false
+  }
+
+  handleToggled = () => {
+    this.setState({ toggled: !this.state.toggled });
+  }
+
+  render() {
+    const { children } = this.props;
+
+    return (
+      <div>
+        <Helmet defaultTitle="Rinae's playground" />
+        <Header
+          toggled={this.state.toggled}
+          handleToggled={this.handleToggled}
+        />
+        <div className="container">
+          {children()}
+        </div>
+      </div>
+    );
+  }
+}
+
+Header.propTypes = {
+  toggled: PropTypes.bool,
+  handleToggled: PropTypes.func
+};
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,
-}
+};
 
 export default TemplateWrapper
