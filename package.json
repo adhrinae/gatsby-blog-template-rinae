@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/emaren84/blog"
+    "url": "https://github.com/emaren84/blog-new"
   },
   "version": "1.0.0",
   "author": "emaren84@gmail.com",
@@ -28,6 +28,11 @@
     "gatsby",
     "blog",
     "react"
+  ],
+  "browserslist": [
+    "> 1%",
+    "IE >= 11",
+    "last 2 versions"
   ],
   "license": "MIT",
   "main": "n/a",

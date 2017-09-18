@@ -8,6 +8,7 @@ class IndexPage extends Component {
     const postsData = this.props.data.allMarkdownRemark.edges;
     const posts = postsData.map(({ node: post }) => (
       <div
+        key={post.id}
         className="box"
         style={{ marginTop: "1rem" }}
       >
