@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 
 import 'typeface-noto-sans';
 import 'bulma';
+import 'prismjs/themes/prism-solarizedlight.css';
 import './layout-style.scss';
 
 const Header = ({ toggled, handleToggled }) => (
