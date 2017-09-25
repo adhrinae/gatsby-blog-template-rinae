@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 
 import 'typeface-noto-sans';
 import 'bulma';
+import './layout-style.scss';
 
 const Header = ({ toggled, handleToggled }) => (
   <nav className="navbar is-info" role="navigation" aria-label="main navigation">
@@ -26,7 +27,7 @@ const Header = ({ toggled, handleToggled }) => (
 
     <div className={toggled ? 'navbar-menu is-active' : 'navbar-menu'}>
       <div className="navbar-end">
-        <Link className="navbar-item" to="/posts">Posts</Link>
+        <Link className="navbar-item" to="/">Posts</Link>
         <Link className="navbar-item" to="/categories">Categories</Link>
         <Link className="navbar-item" to="/tags">Tags</Link>
       </div>

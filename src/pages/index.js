@@ -13,7 +13,10 @@ class IndexPage extends Component {
         style={{ marginTop: "1rem" }}
       >
         <p>
-          <strong>{post.frontmatter.title}</strong>{" "}<small>{post.frontmatter.date}</small>
+          <Link to={post.frontmatter.path}>
+            <strong>{post.frontmatter.title}</strong>
+          </Link>
+          {" "}<small>{post.frontmatter.date}</small>
           {" "}
           <span className="tag is-info">{post.frontmatter.category}</span>
         </p>

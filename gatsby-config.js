@@ -14,6 +14,8 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sass',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -25,6 +27,14 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: []
+      }
+    },
+    'gatsby-remark-responsive-iframe',
+    {
+      resolve: 'gatsby-remark-images',
+      options: {
+        maxWidth: 590,
+        linkImagesToOriginal: false
       }
     }
   ],
