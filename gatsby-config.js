@@ -9,40 +9,40 @@ module.exports = {
       github: "https://github.com/emaren84"
     }
   },
-  pathPrefix: '/blog',
+  pathPrefix: "/blog",
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-twitter',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-sass",
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-twitter",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
+        name: "pages"
       }
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: "gatsby-remark-prismjs",
             options: {
-              classPrefix: 'language-'
+              classPrefix: "language-"
+            }
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 590,
+              linkImagesToOriginal: false
             }
           }
         ]
       }
     },
-    'gatsby-remark-responsive-iframe',
-    {
-      resolve: 'gatsby-remark-images',
-      options: {
-        maxWidth: 590,
-        linkImagesToOriginal: false
-      }
-    }
-  ],
-}
+    "gatsby-remark-responsive-iframe"
+  ]
+};
