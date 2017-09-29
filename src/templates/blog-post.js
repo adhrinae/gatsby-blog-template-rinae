@@ -1,7 +1,7 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from "react";
+import Helmet from "react-helmet";
 
-import './blog-post.scss';
+import "./blog-post.scss";
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;
@@ -12,18 +12,16 @@ export default function Template({ data }) {
           <div className="content">
             <Helmet title={`${post.frontmatter.title} - Rinae's playground`} />
             <div className="post-title">
-              <h1>
-                {post.frontmatter.title}
-              </h1>
+              <h1>{post.frontmatter.title}</h1>
               <span className="has-text-grey-light is-size-6">{post.frontmatter.date}</span>
             </div>
-            <div dangerouslySetInnerHTML={{__html: post.html }} />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
