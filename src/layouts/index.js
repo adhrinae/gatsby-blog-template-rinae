@@ -41,6 +41,20 @@ const Header = ({ toggled, handleToggled }) => (
   </nav>
 );
 
+const Footer = () => (
+  <footer className="footer">
+    <div className="container">
+      <div className="content has-text-centered">
+        <p>All content copyright rinae © 2017 • All rights reserved.</p>
+        <p>
+          Powered by <a href="https://www.gatsbyjs.org">Gatsby.js</a> and{" "}
+          <a href="https://bulma.io">Bulma</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+);
+
 class TemplateWrapper extends Component {
   state = {
     toggled: false
@@ -58,6 +72,7 @@ class TemplateWrapper extends Component {
         <Helmet defaultTitle="Rinae's playground" />
         <Header toggled={this.state.toggled} handleToggled={this.handleToggled} />
         <div>{children()}</div>
+        <Footer />
       </div>
     );
   }
