@@ -1,6 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
 
+import About from "../components/About";
+
 import "./blog-post.scss";
 
 export default function Template({ data }) {
@@ -16,6 +18,7 @@ export default function Template({ data }) {
               <span className="has-text-grey-light is-size-6">{post.frontmatter.date}</span>
             </div>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <About />
           </div>
         </div>
       </div>

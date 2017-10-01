@@ -5,6 +5,7 @@ import Helmet from "react-helmet";
 
 import "typeface-noto-sans";
 import "bulma";
+import "mdi/scss/materialdesignicons.scss";
 import "prismjs/themes/prism-solarizedlight.css";
 import "./layout-style.scss";
 
@@ -69,7 +70,10 @@ class TemplateWrapper extends Component {
 
     return (
       <div>
-        <Helmet defaultTitle="Rinae's playground" />
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Rinae's playground</title>
+        </Helmet>
         <Header toggled={this.state.toggled} handleToggled={this.handleToggled} />
         <div>{children()}</div>
         <Footer />

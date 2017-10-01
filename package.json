@@ -22,6 +22,7 @@
     "gatsby-remark-responsive-iframe": "^1.4.7",
     "gatsby-source-filesystem": "^1.4.12",
     "gatsby-transformer-remark": "^1.7.7",
+    "mdi": "^2.0.46",
     "typeface-noto-sans": "^0.0.35"
   },
   "keywords": [
