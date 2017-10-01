@@ -6,9 +6,9 @@ export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <div className="blog-posts">
+      <Helmet title="Tags" />
       {posts.filter(post => post.node.frontmatter.title.length > 0).map(({ node: post }) => (
         <div className="blog-post-preview" key={post.id}>
-          <Helmet title="Tags" />
           <h1>
             <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
           </h1>
