@@ -40,7 +40,8 @@ module.exports = {
               linkImagesToOriginal: false
             }
           },
-          "gatsby-remark-autolink-headers"
+          "gatsby-remark-autolink-headers",
+          "gatsby-remark-copy-linked-files"
         ]
       }
     },
