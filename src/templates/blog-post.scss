@@ -11,3 +11,21 @@
     }
   }
 }
+
+// resolve conflicts between bulma css preset and prismjs
+pre[class*="language-"] .tag,
+pre[class*="language-"] .number {
+  align-items: stretch;
+  background-color: transparent;
+  border-radius: 0;
+  display: inline;
+  font-size: 1em;
+  justify-content: flex-start;
+  line-height: normal;
+  padding: 0;
+  white-space: pre;
+  margin-right: 0;
+  min-width: auto;
+  text-align: left;
+  vertical-align: baseline;
+}

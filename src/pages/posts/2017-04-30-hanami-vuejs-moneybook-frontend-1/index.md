@@ -45,7 +45,7 @@ Vue.js에 관한 더 자세한 소개와 간단한 튜토리얼은 아래 링크
 
 하나미 프로젝트와 다른 곳 혹은 같은 곳에 폴더를 생성하고 `login.html` 파일을 만든 뒤에 필요한 파일들을 등록해두겠습니다.
 
-```html
+```markup
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +65,7 @@ Vue.js에 관한 더 자세한 소개와 간단한 튜토리얼은 아래 링크
 
 서버와 AJAX 통신을 위해 axios, 좀더 깔끔한 페이지 뷰를 위해 CSS 프레임워크인 Bulma를 사용하겠습니다.
 
-```html
+```markup
 <style>
   html, body {
     height: 100%;
@@ -172,7 +172,7 @@ const app = new Vue({
 
 한 페이지 안에서 로그인 페이지와 회원가입 페이지를 버튼에 따라 다르게 나타나게 하려면 `v-if`, `v-else` 를 사용하면 됩니다. 자세한 내용은 [공식 가이드를 참고해주세요.](https://kr.vuejs.org/v2/guide/conditional.html)
 
-```html
+```markup
 <!--password confirmation-->
 <template v-if="isSignUp">
   <div class="field">
@@ -272,7 +272,7 @@ Form의 `originalData` 속성은 단순히 필드 저장용으로 사용하게 �
 
 이제 input 태그에 데이터를 연결해보겠습니다.
 
-```html
+```markup
 <!--email input-->
 <div class="field">
   <p class="control has-icons-left">
@@ -367,7 +367,7 @@ class Form {
 
 지금은 서버에 데이터를 전송한 뒤에 리턴된 토큰을 저장하는 방법을 살펴보겠습니다. 같은 Form 안에서 조건에 따라 다른 요청을 하도록 구성되어 있기 때문에 Login, Submit 버튼에 다른 메서드를 연결하겠습니다.
 
-```html
+```markup
 <!--buttons-->
 <div class="field">
   <template v-if="!isSignUp">

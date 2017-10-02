@@ -140,7 +140,7 @@ module.exports = {
 
 하나미의 `application.html.erb` 파일에서는 `javascript` 뷰 헬퍼로 자바스크립트 파일을 불러오는데, body  태그 마지막에 불러오도록 한다.
 
-```erb
+```markup
 <!-- ... -->
   <body>
     <div class="container" id="app">
@@ -266,7 +266,7 @@ module.exports = {
 
 이러고 나서 빌드를 마치고 나면 `public/assets` 폴더에는 `app.js`, `vendor.js` 두 개의 파일이 생성된다. 당연하게 레이아웃 페이지에서 `vendor.js` 파일도 로딩해주어야 한다.
 
-```erb
+```markup
 <!-- ... -->
   <body>
     <div class="container" id="app">
@@ -317,7 +317,7 @@ module.exports = {
 
 이후 webpack을 실행하면 `public/assets` 폴더에 `styles.css` 파일이 추가된다. 나머지는 레이아웃 파일에서 이 파일을 불러오도록 만들면 된다.
 
-```erb
+```markup
   <head>
     <%= stylesheet 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css' %>
     <%= stylesheet 'styles' %>

@@ -153,7 +153,7 @@ $ bundle exec hanami generate action web home#index
 
 컨트롤러는 폴더에 불과하며 그 폴더에 속한 각각의 액션 파일에 컨트롤러가 정의되어 있는 형태이다. 또한 뷰는 템플릿 파일(레일즈의 views 폴더 안에 있는 템플릿들)과 뷰 파일(레일즈에 비유하자면 뷰 헬퍼와 비슷)로 구성되어있다. 지금은 템플릿 파일에 간단하게 제목을 추가해보도록 한다.
 
-```erb
+```markup
 # apps/web/templates/home/index.html.erb
 <h1>Bookshelf</h1>
 ```
@@ -239,7 +239,7 @@ $ bundle exec hanami console
     $ bundle exec hanami generate action web books#index
     
 
-```erb
+```markup
 # apps/web/templates/books/index.html.erb
 <h2>All books</h2>
 
@@ -304,7 +304,7 @@ $ bundle exec hanami routes
 
 다음은 `new` 템플릿에 폼 헬퍼(Form helper) 를 이용하여 간단한 폼을 작성해준다.
 
-```erb
+```markup
 # apps/web/templates/books/new.html.erb
 <h2>Add book</h2>
 

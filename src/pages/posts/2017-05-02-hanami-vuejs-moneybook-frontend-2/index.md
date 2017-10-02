@@ -38,7 +38,7 @@ tags:
 
 먼저 Vue 인스턴스와 연결할 HTML 페이지를 만들겠습니다. 파일 이름은 `content.html` 이며, 이전에 만들었던 페이지와 같은 폴더에 위치해야 합니다. 불러와야 하는 자바스크립트 라이브러리가 하나 변경된 수준입니다.
 
-```html
+```markup
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +56,7 @@ tags:
 
 `moment` 라이브러리는 자바스크립트에서 시간을 다루는 데 필요한 최고의 라이브러리입니다. 현재 서버에 자료를 저장할 때 각 레코드의 `created_at`, `updated_at` 이 UTC 기준으로 저장되어 있는데, 서버에서 이 시간을 변경해서 보내주기보다 클라이언트에서 직접 시간대를 변경하여 알맞은 형식으로 표현하는 것 까지 처리할 것입니다.
 
-```html
+```markup
 <style>
 html, body {
   height: 100%;
@@ -288,7 +288,7 @@ const app = new Vue({
 
 이 계산된 값을 바로 HTML 태그 안에 `{{ }}` 로 감싸주어 입력해주시면 됩니다.
 
-```html
+```markup
 <!--dashboard-->
 <div class="columns">
   <div class="column">
@@ -356,7 +356,7 @@ computed: {
 
 `records` 배열의 순서를 뒤집어주고, 시간대를 다시 지정한 뒤에 원하는 포맷으로 출력하도록 만들었습니다. 이렇게 변환된 배열을 `v-for` 로 반복 출력해주면 됩니다.
 
-```html
+```markup
 <!--contents-->
 <table class="table">
   <thead>
@@ -461,7 +461,7 @@ const app = new Vue({
 
 나머지는 저장 버튼을 누를 때 `Form#create` 함수가 실행되도록 만들면 됩니다.
 
-```html
+```markup
 <!--input form-->
 <div class="field has-addons">
   <p class="control">
@@ -546,7 +546,7 @@ const app = new Vue({
 
 이제 우리는 HTML 파일에 `record-row` 라는 이름으로 태그를 선언하여 컴포넌트를 사용할 수 있습니다.
 
-```html
+```markup
 <template v-for="record in allRecords">
   <record-row :record="record"></record-row>
 </template>
@@ -622,7 +622,7 @@ const RecordRow = {
 
 `toggle-edit` 은 상위 컴포넌트에서 `record-row` 컴포넌트를 선언할 때 이벤트로 지정해두면 됩니다. **이벤트 이름이 일치하지 않는다고 오류가 따로 나지 않기 때문에 오탈자에 유의하셔야 합니다.**
 
-```html
+```markup
 <template v-for="(record, index) in allRecords">
   <tr>
     <record-row v-if="!record.isEditMode" @toggle-edit="toggleEditModeOf(index)" :record="record"></record-row>
@@ -730,7 +730,7 @@ const app = new Vue({
 
 코드 아래 쪽을 먼저 봐주시면 `updateForm` 객체를 만들어두긴 했지만 아직 빈 값밖에 없는 상태입니다. 그래서 `editForm` 을 이용하여 컴포넌트에서 `record` 의 값을 updateForm(여기서는 form) 으로 복사해주는 작업을 합니다. 다음에는 input 이벤트가 일어날 때마다 해당 값을 반영한 뒤에 변경된 `form` 을 부모 컴포넌트로 올려보냅니다.
 
-```html
+```markup
 <template v-for="(record, index) in allRecords">
   <record-row v-if="!record.isEditMode"
     @toggle-edit="toggleEditModeOf(index)"
@@ -783,7 +783,7 @@ class Form {
 
 마지막 기능인 레코드 삭제를 구현하겠습니다. 여지껏 구현해왔던 기능에 비하면 훨씬 쉽게 구현할 수 있습니다. 삭제 버튼을 클릭하면 '이 기록을 삭제할것이다' 라는 이벤트를 전송하고, 그러면 우리는 레코드 삭제용 메서드에 해당 레코드의 인덱스를 넘겨주면 됩니다.
 
-```html
+```markup
 <record-row v-if="!record.isEditMode"
   @toggle-edit="toggleEditModeOf(index)"
   @delete-record="deleteRecord(index)" // delete-record 추가
