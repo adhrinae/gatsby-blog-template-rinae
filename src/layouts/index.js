@@ -31,11 +31,11 @@ const Header = ({ toggled, handleToggled }) => (
         <Link className="navbar-item" to="/">
           Posts
         </Link>
-        <Link className="navbar-item" to="/categories">
-          Categories
-        </Link>
         <Link className="navbar-item" to="/tags">
           Tags
+        </Link>
+        <Link className="navbar-item" to="/rss">
+          RSS Feeds
         </Link>
       </div>
     </div>

@@ -33,7 +33,7 @@ const About = () => (
                 <i className="mdi mdi-24px mdi-github-circle" />
               </span>
             </a>
-            <a href="https://twitter.com/emaren84" className="level-item">
+            <a href="https://twitter.com/devRinae" className="level-item">
               <span className="icon has-text-info">
                 <i className="mdi mdi-24px mdi-twitter" />
               </span>

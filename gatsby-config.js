@@ -39,7 +39,8 @@ module.exports = {
               maxWidth: 790,
               linkImagesToOriginal: false
             }
-          }
+          },
+          "gatsby-remark-autolink-headers"
         ]
       }
     },
