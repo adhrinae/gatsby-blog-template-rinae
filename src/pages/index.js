@@ -17,7 +17,11 @@ class IndexPage extends Component {
         />
 
         <div className="container">
-          <PostList postsData={postsData} />
+          <div className="columns">
+            <div className="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet">
+              <PostList postsData={postsData} />
+            </div>
+          </div>
         </div>
       </div>
     );
