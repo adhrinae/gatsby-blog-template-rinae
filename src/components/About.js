@@ -1,7 +1,7 @@
 import React from "react";
 
 const About = () => (
-  <div className="box" style={{ marginTop: "2rem" }}>
+  <div className="box" style={{ margin: "2rem 0" }}>
     <article className="media">
       <div className="media-left is-hidden-mobile">
         <figure className="image">

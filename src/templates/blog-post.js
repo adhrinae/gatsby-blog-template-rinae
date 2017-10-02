@@ -10,7 +10,7 @@ export default function Template({ data }) {
   return (
     <div className="container">
       <div className="columns is-mobile">
-        <div className="column is-10 is-offset-1">
+        <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-8-desktop is-offset-2-desktop">
           <div className="content">
             <Helmet title={`${post.frontmatter.title} - Rinae's playground`} />
             <div className="post-title">
