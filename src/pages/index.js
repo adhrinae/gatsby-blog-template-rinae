@@ -1,28 +1,13 @@
-import React, { Component } from 'react';
-import Link from 'gatsby-link';
+import React, { Component } from "react";
+import Link from "gatsby-link";
 
-import Hero from '../components/Hero';
+import Hero from "../components/Hero";
+import PostList from "../components/PostList";
 
 class IndexPage extends Component {
   render() {
-    const postsData = this.props.data.allMarkdownRemark.edges;
-    const posts = postsData.map(({ node: post }) => (
-      <div
-        key={post.id}
-        className="box"
-        style={{ marginTop: "1rem" }}
-      >
-        <p>
-          <Link to={post.frontmatter.path}>
-            <strong>{post.frontmatter.title}</strong>
-          </Link>
-          {" "}<small>{post.frontmatter.date}</small>
-          {" "}
-          <span className="tag is-info">{post.frontmatter.category}</span>
-        </p>
-        <p>{post.excerpt}</p>
-      </div>
-    ));
+    const edges = this.props.data.allMarkdownRemark.edges;
+    const postsData = edges.map(edge => edge.node);
 
     return (
       <div>
@@ -32,22 +17,18 @@ class IndexPage extends Component {
         />
 
         <div className="container">
-          {posts}
+          <PostList postsData={postsData} />
         </div>
       </div>
     );
   }
 }
 
-
 export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(
-      limit: 1000,
-      sort: { order: DESC, fields: [frontmatter___date] }
-    ) {
+    allMarkdownRemark(limit: 1000, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           excerpt(pruneLength: 250)

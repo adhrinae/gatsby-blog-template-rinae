@@ -25,13 +25,12 @@ const createTagPages = (createPage, edges) => {
 
   // create individual tag page
   tags.forEach(tagName => {
-    const tag = postsByTags[tagName];
+    const postsByTag = postsByTags[tagName];
     createPage({
       path: `/tags/${tagName}`,
       component: tagTemplate,
       context: {
-        tags,
-        tag,
+        postsByTag,
         tagName
       }
     });
@@ -56,6 +55,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               path
               title
               tags
+              category
             }
           }
         }
