@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://emaren84.github.io/blog-new",
+    siteUrl: "https://emaren84.github.io",
     title: "rinae's blog",
     description: "about Translation, Ruby, Javascript, Practical Dev etc.",
     author: {
@@ -10,7 +10,6 @@ module.exports = {
       github: "https://github.com/emaren84"
     }
   },
-  pathPrefix: "/blog-new",
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
@@ -91,7 +90,7 @@ module.exports = {
                 }
               }
             `,
-            output: `/blog-new/rss.xml`
+            output: `/rss.xml`
           }
         ]
       }

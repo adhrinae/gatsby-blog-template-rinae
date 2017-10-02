@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/emaren84/blog-new"
+    "url": "https://github.com/emaren84/emaren84.github.io"
   },
   "version": "1.0.0",
   "author": "emaren84@gmail.com",
@@ -26,22 +26,14 @@
     "mdi": "^2.0.46",
     "typeface-noto-sans": "^0.0.35"
   },
-  "keywords": [
-    "gatsby",
-    "blog",
-    "react"
-  ],
-  "browserslist": [
-    "> 1%",
-    "IE >= 11",
-    "last 2 versions"
-  ],
+  "keywords": ["gatsby", "blog", "react"],
+  "browserslist": ["> 1%", "IE >= 11", "last 2 versions"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
   },
   "devDependencies": {
