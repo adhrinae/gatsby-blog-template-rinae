@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://emaren84.github.io/blog",
+    siteUrl: "https://emaren84.github.io/blog-new",
     title: "rinae's blog",
     description: "about Translation, Ruby, Javascript, Practical Dev etc.",
     author: {
@@ -10,7 +10,7 @@ module.exports = {
       github: "https://github.com/emaren84"
     }
   },
-  pathPrefix: "/blog",
+  pathPrefix: "/blog-new",
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
@@ -55,7 +55,6 @@ module.exports = {
                 title
                 description
                 siteUrl
-                site_url: siteUrl
               }
             }
           }
@@ -66,8 +65,8 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                  guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   custom_elements: [{ "content:encoded": edge.node.html }]
                 });
               });
@@ -76,24 +75,23 @@ module.exports = {
               {
                 allMarkdownRemark(
                   limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  frontmatter: { draft: { ne: true } }
+                  sort: { order: DESC, fields: [frontmatter___date] }
                 ) {
                   edges {
                     node {
                       excerpt
                       html
-                      fields { slug }
                       frontmatter {
                         title
                         date
+                        path
                       }
                     }
                   }
                 }
               }
             `,
-            output: "/rss.xml"
+            output: `/blog-new/rss.xml`
           }
         ]
       }

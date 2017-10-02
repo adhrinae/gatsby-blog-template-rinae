@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-styled-components": "^1.0.5",
+    "gh-pages": "^1.0.0",
     "prettier": "^1.6.1"
   }
 }

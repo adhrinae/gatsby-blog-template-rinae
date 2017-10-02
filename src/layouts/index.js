@@ -34,9 +34,9 @@ const Header = ({ toggled, handleToggled }) => (
         <Link className="navbar-item" to="/tags">
           Tags
         </Link>
-        <Link className="navbar-item" to="/rss">
+        <a className="navbar-item" href="/blog-new/rss.xml">
           RSS Feeds
-        </Link>
+        </a>
       </div>
     </div>
   </nav>
