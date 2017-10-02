@@ -3,7 +3,7 @@ import React from "react";
 const About = () => (
   <div className="box" style={{ marginTop: "2rem" }}>
     <article className="media">
-      <div className="media-left">
+      <div className="media-left is-hidden-mobile">
         <figure className="image">
           <img
             src="http://gravatar.com/avatar/9524cc46254070122cb0ac9fb286acd3"
@@ -21,7 +21,7 @@ const About = () => (
             enthusiasm for learning and sharing new programming issues, especially with translation.
           </p>
         </div>
-        <nav className="level is-mobile">
+        <nav className="level">
           <div className="level-left">
             <a href="mailto:emaren84@gmail.com" className="level-item">
               <span className="icon has-text-info">
