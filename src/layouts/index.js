@@ -9,6 +9,8 @@ import "mdi/scss/materialdesignicons.scss";
 import "prismjs/themes/prism-solarizedlight.css";
 import "./layout-style.scss";
 
+import favicon from "../assets/favicon.ico";
+
 const Header = ({ toggled, handleToggled }) => (
   <nav className="navbar is-info" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
@@ -34,8 +36,8 @@ const Header = ({ toggled, handleToggled }) => (
         <Link className="navbar-item" to="/tags">
           Tags
         </Link>
-        <a className="navbar-item" href="/blog-new/rss.xml">
-          RSS Feeds
+        <a className="navbar-item" href="/rss.xml">
+          RSS Feed
         </a>
       </div>
     </div>
@@ -73,6 +75,7 @@ class TemplateWrapper extends Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Rinae's playground</title>
+          <link rel="shortcut icon" href={favicon} />
         </Helmet>
         <Header toggled={this.state.toggled} handleToggled={this.handleToggled} />
         <div>{children()}</div>
