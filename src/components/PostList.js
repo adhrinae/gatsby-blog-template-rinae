@@ -9,7 +9,8 @@ const PostList = ({ postsData }) => (
         <p>
           <Link to={post.frontmatter.path}>
             <strong>{post.frontmatter.title}</strong>
-          </Link>{" "}
+          </Link>
+          {" - "}
           <small>{post.frontmatter.date}</small>{" "}
           <span className="tag is-info">{post.frontmatter.category}</span>
         </p>
