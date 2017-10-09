@@ -29,3 +29,7 @@ pre[class*="language-"] .number {
   text-align: left;
   vertical-align: baseline;
 }
+
+.content ol li:last-child {
+  margin-bottom: 1em;
+}
