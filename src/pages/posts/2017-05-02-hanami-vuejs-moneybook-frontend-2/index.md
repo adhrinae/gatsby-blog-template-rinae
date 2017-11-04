@@ -10,11 +10,11 @@ tags:
 
 **Hanamirb + Vue.js 시리즈 목차**
 
-1. [API 서버](https://emaren84.github.io/posts/hanami-vuejs-moneybook-api-server)
+1. [API 서버](/posts/hanami-vuejs-moneybook-api-server)
 
-1. [로그인 & 회원가입 페이지](https://emaren84.github.io/posts/hanami-vuejs-moneybook-frontend-1)
+1. [로그인 & 회원가입 페이지](/posts/hanami-vuejs-moneybook-frontend-1)
 
-1. [가계부 페이지](https://emaren84.github.io/posts/hanami-vuejs-moneybook-frontend-2)
+1. [가계부 페이지](/posts/hanami-vuejs-moneybook-frontend-2)
 
 ---
 

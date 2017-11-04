@@ -7,7 +7,7 @@ tags:
   - Javascript
 ---
 
-[앞서 제시된 질문들](https://emaren84.github.io/posts/javascript-roadmap-questions)
+[앞서 제시된 질문들](/posts/javascript-roadmap-questions)
 
 질문을 번역한 이후 따로 공부를 위해 가볍게 온라인 스터디를 진행하여 서로 조사한 부분을 이야기하고, 참고할만한 링크가 있다면 첨부하는 형식의 스터디를 진행하였습니다.
 
