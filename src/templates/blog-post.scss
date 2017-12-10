@@ -9,6 +9,11 @@
         margin-right: 0.7rem;
       }
     }
+
+    ol,
+    ul li:last-child {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -28,8 +33,4 @@ pre[class*="language-"] .number {
   min-width: auto;
   text-align: left;
   vertical-align: baseline;
-}
-
-.content ol li:last-child {
-  margin-bottom: 1em;
 }
