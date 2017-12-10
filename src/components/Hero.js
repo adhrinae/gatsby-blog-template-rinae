@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Hero = ({ title, subtitle }) => (
   <section className="hero is-light">
@@ -10,11 +10,11 @@ const Hero = ({ title, subtitle }) => (
       </div>
     </div>
   </section>
-);
+)
 
 Hero.propTypes = {
   title: PropTypes.string,
-  subtitle: PropTypes.string
-};
+  subtitle: PropTypes.string,
+}
 
-export default Hero;
+export default Hero

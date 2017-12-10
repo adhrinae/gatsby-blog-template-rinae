@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 
 const About = () => (
-  <div className="box" style={{ margin: "2rem 0" }}>
+  <div className="box" style={{ margin: '2rem 0' }}>
     <article className="media">
       <div className="media-left is-hidden-mobile">
         <figure className="image">
           <img
             src="http://gravatar.com/avatar/9524cc46254070122cb0ac9fb286acd3"
             alt="gravatar image"
-            style={{ borderRadius: "50%" }}
+            style={{ borderRadius: '50%' }}
           />
         </figure>
       </div>
@@ -17,8 +17,9 @@ const About = () => (
           <p>
             <strong>Rinae(Ahn Dohyung)</strong>
             <br />
-            Junior frontend developer. Highly interested in React and Vue.js these days. also having
-            enthusiasm for learning and sharing new programming issues, especially with translation.
+            Junior frontend developer. Highly interested in React and Vue.js
+            these days. also having enthusiasm for learning and sharing new
+            programming issues, especially with translation.
           </p>
         </div>
         <nav className="level">
@@ -43,6 +44,6 @@ const About = () => (
       </div>
     </article>
   </div>
-);
+)
 
-export default About;
+export default About

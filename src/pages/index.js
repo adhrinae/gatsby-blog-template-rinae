@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import Link from "gatsby-link";
+import React, { Component } from 'react'
+import Link from 'gatsby-link'
 
-import Hero from "../components/Hero";
-import PostList from "../components/PostList";
+import Hero from '../components/Hero'
+import PostList from '../components/PostList'
 
 class IndexPage extends Component {
   render() {
-    const edges = this.props.data.allMarkdownRemark.edges;
-    const postsData = edges.map(edge => edge.node);
+    const edges = this.props.data.allMarkdownRemark.edges
+    const postsData = edges.map(edge => edge.node)
 
     return (
       <div>
@@ -24,15 +24,18 @@ class IndexPage extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default IndexPage;
+export default IndexPage
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(limit: 1000, sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      limit: 1000
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)
@@ -47,4 +50,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
