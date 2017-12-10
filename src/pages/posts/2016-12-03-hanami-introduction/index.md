@@ -38,7 +38,7 @@ tags:
 
 또한 DHH(David Heinemeier Hansson, 레일즈의 창시자)가 제시하고 있는 ['Rails way'에 반감을 가진 사람들이 점차 늘어나고](http://solnic.eu/2016/05/22/my-time-with-rails-is-up.html) 루비로 웹 개발을 하는 것에 대해 [더 나은 방법을 찾는](http://rwdtow.stdout.in/) 사람들이 점차 늘어나고 있다.
 
-![현재 레일즈 커뮤니티](./2016-12-03-sc1.jpg)
+![현재 레일즈 커뮤니티](2016-12-03-sc1.jpg)
 
 *현재 레일즈 커뮤니티의 묘사 - 출처: http://railshurts.com/current_state*
 
@@ -166,7 +166,7 @@ $ bundle exec hanami generate action web home#index
     $ bundle exec hanami server
     
 
-![Bookshelf Title](./2016-12-03-sc2.png)
+![Bookshelf Title](2016-12-03-sc2.png)
 
 
 ### 모델 구축하기
@@ -276,7 +276,7 @@ end
 
 `expose` 메서드의 사용은 하나미의 규칙으로, `expose` 로 지정한 변수만 템플릿으로 노출되며 그 변수는 `call` 메서드 안에 인스턴스 변수로 존재해야 한다.
 
-![Bookshelf list](./2016-12-03-sc3.png)
+![Bookshelf list](2016-12-03-sc3.png)
 
 
 
