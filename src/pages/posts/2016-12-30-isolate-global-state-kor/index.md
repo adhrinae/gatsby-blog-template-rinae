@@ -7,6 +7,7 @@ tags:
   - Ruby
   - Hanami
   - Testing
+  - Translation
 ---
 
 - **본 포스트는 [Luca Guidi의 포스팅을](https://lucaguidi.com/2016/12/27/isolate-global-state.html) 번역한 글입니다**

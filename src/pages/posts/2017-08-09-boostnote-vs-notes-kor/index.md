@@ -7,6 +7,7 @@ tags:
   - Markdown
   - Tools
   - OSS
+  - Translation
 ---
 
 - 이 포스팅은 Boostnote 팀의 요청에 의하여 번역되었습니다.

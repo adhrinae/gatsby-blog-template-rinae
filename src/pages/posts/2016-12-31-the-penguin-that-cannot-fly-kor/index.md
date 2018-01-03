@@ -6,6 +6,7 @@ category: "Translation"
 tags:
   - Ruby
   - OOP
+  - Translation
 ---
 
 - **이 포스팅은 [Luca Guidi의 포스팅](https://lucaguidi.com/2016/06/07/the-penguin-that-cannot-fly.html)을 번역한 글입니다**

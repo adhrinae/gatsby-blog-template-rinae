@@ -5,6 +5,7 @@ title: "[번역] 도우면서 배우기"
 category: "Translation"
 tags:
   - Learning
+  - Translation
 ---
 
 - 이 글은 [Joël Quenneville](https://twitter.com/joelquen)의 [글](https://robots.thoughtbot.com/learning-by-helping)을 번역한 것입니다

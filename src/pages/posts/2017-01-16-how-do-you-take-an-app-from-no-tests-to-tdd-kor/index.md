@@ -6,6 +6,7 @@ category: "Translation"
 tags:
   - Ruby
   - Testing
+  - Translation
 ---
 
 - **이 번역글은 [Justin Weiss의 포스팅](http://www.justinweiss.com/articles/how-do-you-take-an-app-from-test-less-to-tdd/)을 번역한 글입니다**

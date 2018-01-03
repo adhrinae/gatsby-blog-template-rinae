@@ -6,6 +6,7 @@ category: "Translation"
 tags:
   - Ruby
   - OOP
+  - Translation
 ---
 
 - **이 포스팅은 [Piotr Solnica](https://twitter.com/_solnic_)의 [글](http://solnic.eu/2013/12/17/the-world-needs-another-post-about-dependency-injection-in-ruby.html)을 번역한 것입니다**

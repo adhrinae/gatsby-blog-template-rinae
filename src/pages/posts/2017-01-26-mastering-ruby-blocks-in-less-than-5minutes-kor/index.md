@@ -5,6 +5,7 @@ title: "[번역] 루비 블록을 5분 이내에 마스터하기"
 category: "Translation"
 tags:
   - Ruby
+  - Translation
 ---
 
 - **이 포스팅은 [Cezar Halmagean](https://twitter.com/chalmagean)의 [포스팅](https://mixandgo.com/blog/mastering-ruby-blocks-in-less-than-5-minutes)을 번역한 글입니다**

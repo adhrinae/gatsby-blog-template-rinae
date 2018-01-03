@@ -5,6 +5,7 @@ title: "[번역] 내가 StackOverflow를 사용하는 방법"
 category: "Translation"
 tags:
   - Learning
+  - Translation
 ---
 
 - **이 글의 원문은 [Simone Carletti가 작성하였습니다.](https://simonecarletti.com/blog/2016/12/how-i-use-stackoverflow/)**

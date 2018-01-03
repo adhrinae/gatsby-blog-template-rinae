@@ -5,6 +5,7 @@ title: "[번역] C++와 Python 중 무엇을 먼저 배울까?"
 category: "Translation"
 tags:
   - Learning
+  - Translation
 ---
 - **본 포스트는 [Gerald Weinberg](https://en.wikipedia.org/wiki/Gerald_Weinberg)의 [포스팅](http://secretsofconsulting.blogspot.kr/2017/02/should-i-learn-c-or-python.html)의 번역본입니다**
 - **피드백은 언제나 환영합니다**

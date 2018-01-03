@@ -6,6 +6,7 @@ category: "Translation"
 tags:
   - Ruby
   - Debugging
+  - Translation
 ---
 
 - 본 포스트는 [Aaron Patterson](https://twitter.com/tenderlove)의 [포스트](https://tenderlovemaking.com/2016/02/05/i-am-a-puts-debuggerer.html)의 번역본입니다.

@@ -6,6 +6,7 @@ category: "Translation"
 tags:
   - Programming
   - Code Review
+  - Translation
 ---
 
 - 이 글의 원문은 [Yegor Bugayenko가 작성하였습니다.](http://www.yegor256.com/2015/02/09/serious-code-reviewer.html)

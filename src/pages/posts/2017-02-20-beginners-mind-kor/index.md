@@ -5,6 +5,7 @@ title: "[번역] 초심자의 마음가짐"
 category: "Translation"
 tags:
   - Learning
+  - Translation
 ---
 
 - **이 포스트는 [Ian C. Anderson](https://twitter.com/IanCAnderson)의 [글](https://robots.thoughtbot.com/beginners-mind)을 번역한 것입니다**

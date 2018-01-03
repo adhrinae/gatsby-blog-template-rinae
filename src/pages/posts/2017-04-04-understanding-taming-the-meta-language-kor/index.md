@@ -6,6 +6,7 @@ category: "Translation"
 tags:
   - Programming
   - Learning
+  - Translation
 ---
 
 - **이 포스트는 [Alex Kotliarskyi](http://frantic.im/)의 [글](http://frantic.im/meta-language)을 번역한 것입니다.**
