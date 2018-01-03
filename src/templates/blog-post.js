@@ -1,16 +1,18 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import React from "react";
+import Link from "gatsby-link";
+import Helmet from "react-helmet";
+import styled from "styled-components";
 
-import About from '../components/About'
+import About from "../components/About";
+import Disqus from "../components/Disqus";
 
-import './blog-post.scss'
+import "./blog-post.scss";
 
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-`
+  margin-top: 1rem;
+`;
 
 const TagList = ({ tags }) => (
   <div>
@@ -23,11 +25,12 @@ const TagList = ({ tags }) => (
       ))}
     </div>
   </div>
-)
+);
 
 export default function Template({ data }) {
-  const { markdownRemark: post } = data
-  const tags = post.frontmatter.tags
+  const { markdownRemark: post } = data;
+  const { siteUrl, disqusShortUrl } = data.site.siteMetadata;
+  const tags = post.frontmatter.tags;
 
   return (
     <div className="container">
@@ -37,27 +40,30 @@ export default function Template({ data }) {
             <Helmet title={`${post.frontmatter.title} - Rinae's playground`} />
             <div className="post-title">
               <h1>{post.frontmatter.title}</h1>
-              <span className="has-text-grey-light is-size-6">
-                {post.frontmatter.date}
-              </span>
+              <span className="has-text-grey-light is-size-6">{post.frontmatter.date}</span>
             </div>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
             <hr />
             <TagList tags={tags} />
             <About />
+            <Disqus
+              shortname={disqusShortUrl}
+              title={post.frontmatter.title}
+              url={`${siteUrl}/${post.frontmatter.path}`}
+            />
             <ButtonWrapper>
               <Link to="/" className="button is-info is-large">
                 <span className="icon is-medium">
                   <i className="mdi mdi-36px mdi-format-list-bulleted" />
-                </span>
-                <span>Back to All posts</span>{' '}
+                </span>{" "}
+                <span>Back to All posts</span>
               </Link>
             </ButtonWrapper>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -71,5 +77,11 @@ export const pageQuery = graphql`
         tags
       }
     }
+    site {
+      siteMetadata {
+        siteUrl
+        disqusShortUrl
+      }
+    }
   }
-`
+`;
