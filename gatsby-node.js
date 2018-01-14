@@ -69,10 +69,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges
 
-    // filter reserved posts
-    const currentPosts = posts.filter(({ node }) => new Date(node.frontmatter.date) < new Date())
-
-    currentPosts.forEach(({ node }) => {
+    posts.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,

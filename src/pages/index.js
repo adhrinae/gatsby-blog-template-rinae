@@ -7,7 +7,7 @@ import PostList from '../components/PostList'
 export default function IndexPage(props) {
   const edges = props.data.allMarkdownRemark.edges
   const postsData = edges
-    .filter(({ node }) => new Date(node.frontmatter.date) < new Date())
+    .filter(({ node }) => new Date(node.frontmatter.date) < new Date()) // hide reserved posts
     .map(edge => edge.node)
 
   return (
