@@ -1,31 +1,31 @@
-const path = require("path");
+const path = require('path')
 
 const createTagPages = (createPage, edges) => {
-  const tagTemplate = path.resolve("src/templates/tags.js");
-  const postsByTags = {};
+  const tagTemplate = path.resolve('src/templates/tags.js')
+  const postsByTags = {}
 
   edges.forEach(({ node }) => {
     node.frontmatter.tags.forEach(tag => {
       if (!postsByTags[tag]) {
-        postsByTags[tag] = [];
+        postsByTags[tag] = []
       }
 
-      postsByTags[tag].push(node);
-    });
-  });
+      postsByTags[tag].push(node)
+    })
+  })
 
-  const tags = Object.keys(postsByTags);
+  const tags = Object.keys(postsByTags)
 
   // create All Tags page
   createPage({
-    path: "/tags",
+    path: '/tags',
     component: tagTemplate,
     context: { postsByTags }
-  });
+  })
 
   // create individual tag page
   tags.forEach(tagName => {
-    const postsByTag = postsByTags[tagName];
+    const postsByTag = postsByTags[tagName]
     createPage({
       path: `/tags/${tagName}`,
       component: tagTemplate,
@@ -33,14 +33,14 @@ const createTagPages = (createPage, edges) => {
         postsByTag,
         tagName
       }
-    });
-  });
-};
+    })
+  })
+}
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage } = boundActionCreators
 
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
 
   return graphql(`
     {
@@ -63,20 +63,21 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     }
   `).then(result => {
     if (result.errors) {
-      console.error(result.errors);
-      return Promise.reject(result.errors);
+      console.error(result.errors)
+      return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges;
+    const posts = result.data.allMarkdownRemark.edges
 
-    createTagPages(createPage, posts);
+    // filter reserved posts
+    const currentPosts = posts.filter(({ node }) => new Date(node.frontmatter.date) < new Date())
 
-    posts.forEach(({ node }) => {
+    currentPosts.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,
         context: {}
-      });
-    });
-  });
-};
+      })
+    })
+  })
+}
