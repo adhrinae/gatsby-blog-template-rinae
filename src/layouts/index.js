@@ -1,25 +1,25 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Link from "gatsby-link";
-import Helmet from "react-helmet";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 
-import "typeface-noto-sans";
-import "bulma";
-import "mdi/scss/materialdesignicons.scss";
-import "prismjs/themes/prism-tomorrow.css";
-import "./layout-style.scss";
+import 'typeface-noto-sans'
+import 'bulma'
+import 'mdi/scss/materialdesignicons.scss'
+import 'prismjs/themes/prism-tomorrow.css'
+import './layout-style.scss'
 
-import favicon from "../assets/favicon.ico";
+import favicon from '../assets/favicon.ico'
 
 const Header = ({ toggled, handleToggled }) => (
   <nav className="navbar is-info" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
-      <Link to="/" className="navbar-item navbar-title" style={{ fontWeight: "bold" }}>
+      <Link to="/" className="navbar-item navbar-title" style={{ fontWeight: 'bold' }}>
         Rinae's playground
       </Link>
 
       <div
-        className={toggled ? "navbar-burger is-active" : "navbar-burger"}
+        className={toggled ? 'navbar-burger is-active' : 'navbar-burger'}
         onClick={() => handleToggled()}
       >
         <span />
@@ -28,7 +28,7 @@ const Header = ({ toggled, handleToggled }) => (
       </div>
     </div>
 
-    <div className={toggled ? "navbar-menu is-active" : "navbar-menu"}>
+    <div className={toggled ? 'navbar-menu is-active' : 'navbar-menu'}>
       <div className="navbar-end">
         <Link className="navbar-item" to="/">
           Posts
@@ -42,33 +42,33 @@ const Header = ({ toggled, handleToggled }) => (
       </div>
     </div>
   </nav>
-);
+)
 
 const Footer = () => (
   <footer className="footer">
     <div className="container">
       <div className="content has-text-centered">
-        <p>All content copyright rinae © 2017 • All rights reserved.</p>
+        <p>All content copyright rinae © {new Date().getFullYear()} • All rights reserved.</p>
         <p>
-          Powered by <a href="https://www.gatsbyjs.org">Gatsby.js</a> and{" "}
+          Powered by <a href="https://www.gatsbyjs.org">Gatsby.js</a> and{' '}
           <a href="https://bulma.io">Bulma</a>
         </p>
       </div>
     </div>
   </footer>
-);
+)
 
 class TemplateWrapper extends Component {
   state = {
     toggled: false
-  };
+  }
 
   handleToggled = () => {
-    this.setState({ toggled: !this.state.toggled });
-  };
+    this.setState({ toggled: !this.state.toggled })
+  }
 
   render() {
-    const { children } = this.props;
+    const { children } = this.props
 
     return (
       <div>
@@ -81,17 +81,17 @@ class TemplateWrapper extends Component {
         <div>{children()}</div>
         <Footer />
       </div>
-    );
+    )
   }
 }
 
 Header.propTypes = {
   toggled: PropTypes.bool,
   handleToggled: PropTypes.func
-};
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func
-};
+}
 
-export default TemplateWrapper;
+export default TemplateWrapper

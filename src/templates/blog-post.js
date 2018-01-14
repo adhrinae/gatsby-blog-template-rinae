@@ -1,18 +1,18 @@
-import React from "react";
-import Link from "gatsby-link";
-import Helmet from "react-helmet";
-import styled from "styled-components";
+import React from 'react'
+import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
 
-import About from "../components/About";
-import Disqus from "../components/Disqus";
+import About from '../components/About'
+import Disqus from '../components/Disqus'
 
-import "./blog-post.scss";
+import './blog-post.scss'
 
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-`;
+`
 
 const TagList = ({ tags }) => (
   <div>
@@ -25,12 +25,12 @@ const TagList = ({ tags }) => (
       ))}
     </div>
   </div>
-);
+)
 
 export default function Template({ data }) {
-  const { markdownRemark: post } = data;
-  const { siteUrl, disqusShortUrl } = data.site.siteMetadata;
-  const tags = post.frontmatter.tags;
+  const { markdownRemark: post } = data
+  const { siteUrl, disqusShortUrl } = data.site.siteMetadata
+  const tags = post.frontmatter.tags
 
   return (
     <div className="container">
@@ -55,15 +55,15 @@ export default function Template({ data }) {
               <Link to="/" className="button is-info is-large">
                 <span className="icon is-medium">
                   <i className="mdi mdi-36px mdi-format-list-bulleted" />
-                </span>{" "}
-                <span>Back to All posts</span>
+                </span>{' '}
+                <span>BACK TO ALL POSTS</span>
               </Link>
             </ButtonWrapper>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export const pageQuery = graphql`
@@ -84,4 +84,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
