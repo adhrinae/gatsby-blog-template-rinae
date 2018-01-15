@@ -69,6 +69,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges
 
+    createTagPages(createPage, posts)
+
     posts.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
