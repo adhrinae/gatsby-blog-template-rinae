@@ -1,5 +1,5 @@
 ---
-path: "/posts/how-i-user-stackoverflow-kor"
+path: "/posts/how-i-use-stackoverflow-kor"
 date: "2017-04-15"
 title: "[번역] 내가 StackOverflow를 사용하는 방법"
 category: "Translation"
