@@ -9,6 +9,13 @@ tags:
   - TDD
 ---
 
+**더 좋은 테스트를 위한 번역 시리즈**
+
+1. [그래서, 자바스크립트 테스트가 뭔가요?](/posts/what-is-testing-javascript-kr)
+2. [테스트를 작성하라. 너무 많이는 말고. 통합 테스트를 많이 써라.](/posts/write-mostly-integration-test-kr)
+3. [리덕스 앱을 저비용 고효율로 통합 테스트 하기](/posts/integration-tests-in-redux-apps)
+4. [리액트 + 리덕스 앱을 Jest와 Enzyme으로 테스트하며 얻은 교훈](/posts/lessons-learned-testing-react-redux-apps-with-jest-and-enzyme-kr)
+
 ## 들어가며(번역 서문)
 
 “더 좋은 테스트를 위한 번역 시리즈” 두 번째입니다. 테스트를 작성하는게 좋다는 공감대는 얻었을 지 몰라도 막상 코드 에디터 앞에서는 대략 정신이 멍해지기 일쑤입니다. 전부 다 테스트를 하자니 너무 광범위하고, 함수 단위로 유닛 테스트만 작성하자니 너무 세세해서 실제 제대로 애플리케이션이 동작하는지 파악하기도 어렵거니와 노력 대비 별로 쓸모가 없어보이기도 합니다.

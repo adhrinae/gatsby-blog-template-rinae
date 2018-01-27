@@ -9,6 +9,13 @@ tags:
   - Testing
 ---
 
+**더 좋은 테스트를 위한 번역 시리즈**
+
+1. [그래서, 자바스크립트 테스트가 뭔가요?](/posts/what-is-testing-javascript-kr)
+2. [테스트를 작성하라. 너무 많이는 말고. 통합 테스트를 많이 써라.](/posts/write-mostly-integration-test-kr)
+3. [리덕스 앱을 저비용 고효율로 통합 테스트 하기](/posts/integration-tests-in-redux-apps)
+4. [리액트 + 리덕스 앱을 Jest와 Enzyme으로 테스트하며 얻은 교훈](/posts/lessons-learned-testing-react-redux-apps-with-jest-and-enzyme-kr)
+
 ## 들어가며
 
 요즘 개인적으로 “가능한한 내 코드에 모두 테스트를 작성하겠다” 라는 목표를 가지고 있습니다. 하지만 테스트에 대해 두루뭉술한 개념만 가지고 있고, 지금은 상대적으로 쉬운 함수만 테스트를 작성할 수 있는 수준입니다.
