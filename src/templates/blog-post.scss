@@ -23,8 +23,8 @@
 }
 
 // resolve conflicts between bulma css preset and prismjs
-pre[class*="language-"] .tag,
-pre[class*="language-"] .number {
+pre[class*='language-'] .tag,
+pre[class*='language-'] .number {
   align-items: stretch;
   background-color: transparent;
   border-radius: 0;
@@ -38,4 +38,9 @@ pre[class*="language-"] .number {
   min-width: auto;
   text-align: left;
   vertical-align: baseline;
+}
+
+// embed tweet styling
+.twitter-tweet-rendered {
+  margin: 0 auto;
 }
