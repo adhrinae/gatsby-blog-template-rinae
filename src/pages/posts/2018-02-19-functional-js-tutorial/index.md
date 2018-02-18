@@ -100,7 +100,7 @@ function cssMinifierNormal(cssString) {
 ```js
 const trim = (str) => str.trim();
 
-// function trim() {
+// function trim(str) {
 //   return str.trim();
 // }
 
@@ -128,7 +128,7 @@ removeSpaceAroundComma('One , Two , Three , Four')
 위의 `replace` 함수를 이런 식으로 활용할 수 있습니다. 조금만 손을 보면 어떤 문자 주변의 공백이든 손쉽게 제거해주는 함수를 만들 수 있겠네요. 
 
 ```js
-const removeSpaceAroundChar = char => replace(new RegExp(`\\s*${char}\\s*`, 'g'), char);
+const removeSpaceAroundChar = (char) => replace(new RegExp(`\\s*${char}\\s*`, 'g'), char);
 
 const removeSpaceAroundSemi = removeSpaceAroundChar(';');
 removeSpaceAroundSemi('; undefined is not a function ; ');
