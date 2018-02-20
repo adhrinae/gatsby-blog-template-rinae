@@ -14,7 +14,7 @@ tags:
 - 타입스크립트의 타입 시스템을 적극적으로 활용해보기
 - 타입스크립트 뿐 아니라 자바스크립트의 기초에 소홀히 하지 않기
 - 다양한 프로그래밍 패러다임과 이론을 익히면서 실무에 접목하기 -> 더욱 간결하고 유지보수가 용이한 코드 작성하기
-- [테스팅](https://emaren84.github.io/posts/what-is-testing-javascript-kr)
+- [테스팅](/posts/what-is-testing-javascript-kr)
 
 이 정도로 나열해 볼 수 있습니다.
 
