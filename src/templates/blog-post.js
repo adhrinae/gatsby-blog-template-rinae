@@ -36,7 +36,7 @@ export default class Template extends React.Component {
     utterances.setAttribute('async', true)
 
     const aboutBox = document.querySelector('.box')
-    aboutBox.appendChild(utterances)
+    aboutBox.insertAdjacentElement('afterend', utterances)
   }
 
   render() {
