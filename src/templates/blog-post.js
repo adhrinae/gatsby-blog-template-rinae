@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
 import About from '../components/About'
-import Disqus from '../components/Disqus'
 
 import './blog-post.scss'
 
@@ -27,43 +26,56 @@ const TagList = ({ tags }) => (
   </div>
 )
 
-export default function Template({ data }) {
-  const { markdownRemark: post } = data
-  const { siteUrl, disqusShortUrl } = data.site.siteMetadata
-  const tags = post.frontmatter.tags
+export default class Template extends React.Component {
+  componentDidMount() {
+    const utterances = document.createElement('script')
+    utterances.setAttribute('src', 'https://utteranc.es/client.js')
+    utterances.setAttribute('repo', 'emaren84/gatsby-blog')
+    utterances.setAttribute('branch', 'master')
+    utterances.setAttribute('issue-term', 'pathname')
+    utterances.setAttribute('async', true)
 
-  return (
-    <div className="container">
-      <div className="columns is-mobile">
-        <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-8-desktop is-offset-2-desktop">
-          <div className="content">
-            <Helmet title={`${post.frontmatter.title} - Rinae's playground`} />
-            <div className="post-title">
-              <h1>{post.frontmatter.title}</h1>
-              <span className="has-text-grey-light is-size-6">{post.frontmatter.date}</span>
+    const aboutBox = document.querySelector('.box')
+    aboutBox.appendChild(utterances)
+  }
+
+  render() {
+    const { markdownRemark: post } = this.props.data
+    const { siteUrl, disqusShortUrl } = this.props.data.site.siteMetadata
+    const tags = post.frontmatter.tags
+
+    return (
+      <div className="container">
+        <div className="columns is-mobile">
+          <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-8-desktop is-offset-2-desktop">
+            <div className="content">
+              <Helmet
+                title={`${post.frontmatter.title} - Rinae's playground`}
+              />
+              <div className="post-title">
+                <h1>{post.frontmatter.title}</h1>
+                <span className="has-text-grey-light is-size-6">
+                  {post.frontmatter.date}
+                </span>
+              </div>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              <hr />
+              <TagList tags={tags} />
+              <About />
+              <ButtonWrapper>
+                <Link to="/" className="button is-info is-large">
+                  <span className="icon is-medium">
+                    <i className="mdi mdi-36px mdi-format-list-bulleted" />
+                  </span>{' '}
+                  <span>BACK TO ALL POSTS</span>
+                </Link>
+              </ButtonWrapper>
             </div>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <hr />
-            <TagList tags={tags} />
-            <About />
-            <Disqus
-              shortname={disqusShortUrl}
-              title={post.frontmatter.title}
-              url={`${siteUrl}/${post.frontmatter.path}`}
-            />
-            <ButtonWrapper>
-              <Link to="/" className="button is-info is-large">
-                <span className="icon is-medium">
-                  <i className="mdi mdi-36px mdi-format-list-bulleted" />
-                </span>{' '}
-                <span>BACK TO ALL POSTS</span>
-              </Link>
-            </ButtonWrapper>
           </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export const pageQuery = graphql`
