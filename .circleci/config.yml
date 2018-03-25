@@ -19,6 +19,12 @@ jobs:
     steps:
       - checkout
 
+      # Set git profile
+      - run:
+          command: |
+            git config --global user.email "emaren84@gmail.com"
+            git config --global user.name "Ahn Dohyung"
+
       # Download and cache dependencies
       - restore_cache:
           keys:
