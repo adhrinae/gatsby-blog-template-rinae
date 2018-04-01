@@ -1,13 +1,13 @@
 {
-  "name": "@emaren84/blog",
+  "name": "@adhrinae/blog",
   "description": "rinae's blog talking about better development",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/emaren84/emaren84.github.io"
+    "url": "https://github.com/adhrinae/adhrinae.github.io"
   },
   "version": "1.0.0",
-  "author": "emaren84@gmail.com",
+  "author": "adhrinae@gmail.com",
   "dependencies": {
     "bulma": "^0.5.2",
     "gatsby": "^1.9.17",
@@ -36,7 +36,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "publish":
-      "gh-pages -d public -b master -r 'git@github.com:emaren84/emaren84.github.io.git'",
+      "gh-pages -d public -b master -r 'git@github.com:adhrinae/adhrinae.github.io.git'",
     "deploy:local": "git push repo master && npm run build && npm run publish",
     "deploy:ci": "npm run build && npm run publish",
     "format":

@@ -1,60 +1,60 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://emaren84.github.io",
-    disqusShortUrl: "gatsby-blog-1",
+    siteUrl: 'https://adhrinae.github.io',
+    disqusShortUrl: 'gatsby-blog-1',
     title: "rinae's blog",
-    description: "about Translation, Ruby, Javascript, Practical Dev etc.",
+    description: 'about Translation, Ruby, Javascript, Practical Dev etc.',
     author: {
-      name: "Dohyung Ahn(Rinae)",
-      email: "emaren84@gmail.com",
-      twitter: "https://twitter.com/devRinae",
-      github: "https://github.com/emaren84"
+      name: 'Dohyung Ahn(Rinae)',
+      email: 'adhrinae@gmail.com',
+      twitter: 'https://twitter.com/adhrinae',
+      github: 'https://github.com/adhrinae'
     }
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-catch-links",
-    "gatsby-plugin-sass",
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-twitter",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-twitter',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages"
+        name: 'pages'
       }
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-prismjs",
+            resolve: 'gatsby-remark-prismjs',
             options: {
-              classPrefix: "language-"
+              classPrefix: 'language-'
             }
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 790,
               linkImagesToOriginal: false
             }
           },
-          "gatsby-remark-autolink-headers",
-          "gatsby-remark-copy-linked-files"
+          'gatsby-remark-autolink-headers',
+          'gatsby-remark-copy-linked-files'
         ]
       }
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-110939745-1",
+        trackingId: 'UA-110939745-1',
         anonymize: true
       }
     },
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: 'gatsby-plugin-feed',
       options: {
         query: `
           {
@@ -75,9 +75,9 @@ module.exports = {
                   description: edge.node.excerpt,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                  custom_elements: [{ "content:encoded": edge.node.html }]
-                });
-              });
+                  custom_elements: [{ 'content:encoded': edge.node.html }]
+                })
+              })
             },
             query: `
               {
@@ -104,6 +104,6 @@ module.exports = {
         ]
       }
     },
-    "gatsby-remark-responsive-iframe"
+    'gatsby-remark-responsive-iframe'
   ]
-};
+}

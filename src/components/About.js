@@ -24,17 +24,17 @@ const About = () => (
         </div>
         <nav className="level">
           <div className="level-left">
-            <a href="mailto:emaren84@gmail.com" className="level-item">
+            <a href="mailto:adhrinae@gmail.com" className="level-item">
               <span className="icon has-text-info">
                 <i className="mdi mdi-24px mdi-email" />
               </span>
             </a>
-            <a href="https://github.com/emaren84" className="level-item">
+            <a href="https://github.com/adhrinae" className="level-item">
               <span className="icon has-text-info">
                 <i className="mdi mdi-24px mdi-github-circle" />
               </span>
             </a>
-            <a href="https://twitter.com/devRinae" className="level-item">
+            <a href="https://twitter.com/adhrinae" className="level-item">
               <span className="icon has-text-info">
                 <i className="mdi mdi-24px mdi-twitter" />
               </span>
