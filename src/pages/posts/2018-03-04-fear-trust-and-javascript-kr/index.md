@@ -7,6 +7,7 @@ tags:
   - Functional Programming
   - Javascript
   - Typescript
+  - Translation
 ---
 
 * 이 포스트는 [Nicholas Kariniemi](https://twitter.com/nkariniemi)의 [Fear, trust and JavaScript: When types and functional programming fail](https://www.reaktor.com/blog/fear-trust-and-javascript/)를 번역한 글입니다

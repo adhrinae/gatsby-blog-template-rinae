@@ -7,6 +7,7 @@ tags:
   - Testing
   - React
   - Javascript
+  - Translation
 ---
 
 **더 좋은 테스트를 위한 번역 시리즈**
