@@ -30,7 +30,7 @@ export default class Template extends React.Component {
   componentDidMount() {
     const utterances = document.createElement('script')
     utterances.setAttribute('src', 'https://utteranc.es/client.js')
-    utterances.setAttribute('repo', 'emaren84/gatsby-blog')
+    utterances.setAttribute('repo', 'adhrinae/gatsby-blog')
     utterances.setAttribute('branch', 'master')
     utterances.setAttribute('issue-term', 'pathname')
     utterances.setAttribute('async', true)
