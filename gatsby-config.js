@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://adhrinae.github.io',
-    disqusShortUrl: 'gatsby-blog-1',
     title: "rinae's blog",
     description: 'about Translation, Ruby, Javascript, Practical Dev etc.',
     author: {

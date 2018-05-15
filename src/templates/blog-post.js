@@ -41,7 +41,7 @@ export default class Template extends React.Component {
 
   render() {
     const { markdownRemark: post } = this.props.data
-    const { siteUrl, disqusShortUrl } = this.props.data.site.siteMetadata
+    const { siteUrl } = this.props.data.site.siteMetadata
     const tags = post.frontmatter.tags
 
     return (
@@ -92,7 +92,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         siteUrl
-        disqusShortUrl
       }
     }
   }

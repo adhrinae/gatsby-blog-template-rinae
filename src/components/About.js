@@ -6,7 +6,7 @@ const About = () => (
       <div className="media-left is-hidden-mobile">
         <figure className="image">
           <img
-            src="https://gravatar.com/avatar/9524cc46254070122cb0ac9fb286acd3"
+            src="https://gravatar.com/avatar/02026487bc28d395fbbee71bed30c43a"
             alt="gravatar image"
             style={{ borderRadius: '50%' }}
           />
