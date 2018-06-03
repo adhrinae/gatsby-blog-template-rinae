@@ -26,17 +26,27 @@ const TagList = ({ tags }) => (
   </div>
 )
 
+function initUtterances() {
+  const utterancesConfig = {
+    src: 'https://utteranc.es/client.js',
+    repo: 'adhrinae/gatsby-blog',
+    branch: 'master',
+    async: true,
+    'issue-term': 'pathname'
+  }
+  const utterances = document.createElement('script')
+  const aboutBox = document.querySelector('.box')
+
+  for (const [key, val] of Object.entries(utterancesConfig)) {
+    utterances.setAttribute(key, val)
+  }
+
+  aboutBox.insertAdjacentElement('afterend', utterances)
+}
+
 export default class Template extends React.Component {
   componentDidMount() {
-    const utterances = document.createElement('script')
-    utterances.setAttribute('src', 'https://utteranc.es/client.js')
-    utterances.setAttribute('repo', 'adhrinae/gatsby-blog')
-    utterances.setAttribute('branch', 'master')
-    utterances.setAttribute('issue-term', 'pathname')
-    utterances.setAttribute('async', true)
-
-    const aboutBox = document.querySelector('.box')
-    aboutBox.insertAdjacentElement('afterend', utterances)
+    initUtterances()
   }
 
   render() {
