@@ -40,6 +40,11 @@ pre[class*='language-'] .number {
   vertical-align: baseline;
 }
 
+:not(pre) > code[class*='language-'] {
+  background: #1b1f23;
+  color: #ff3860;
+}
+
 // embed tweet styling
 .twitter-tweet-rendered {
   margin: 0 auto;
