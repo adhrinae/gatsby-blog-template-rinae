@@ -17,9 +17,9 @@ const About = () => (
           <p>
             <strong>Rinae(Ahn Dohyung)</strong>
             <br />
-            (Currently)Frontend developer. Highly interested in React and Vue.js
-            these days. also having enthusiasm for learning and sharing new
-            programming issues, especially with translation.
+            Frontend developer. Highly interested in ReactJS, Testing and
+            Programming Fundamentals. Also, Have the enthusiasm for learning and
+            sharing new programming issues, especially with translation.
           </p>
         </div>
         <nav className="level">
