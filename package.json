@@ -37,7 +37,6 @@
     "develop": "gatsby develop",
     "publish":
       "gh-pages -d public -b master -r 'git@github.com:adhrinae/adhrinae.github.io.git'",
-    "deploy:local": "git push repo master && npm run build && npm run publish",
     "deploy:ci": "npm run build && npm run publish",
     "format":
       "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
