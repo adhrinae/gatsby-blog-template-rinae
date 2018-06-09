@@ -4,7 +4,7 @@ date: "2018-01-16"
 title: "TypeStyle 사용하기"
 category: "TypeStyle"
 tags:
-  - TypeScript
+  - Typescript
   - React
   - CSS
 ---
