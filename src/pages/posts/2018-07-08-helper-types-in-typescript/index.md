@@ -40,7 +40,7 @@ type DiffExample = Diff<'a' | 'b' | 'c' | 'd', 'a' | 'c' | 'f'>;  // 'b' | 'd'
 위 예제를 보면 바로 이해하실 수 있으리라 생각합니다. 기준이 되는 앞의 타입과 뒤에 정의한 타입 사이에 겹치지 않는 결과물만 정의되었습니다. 아직은 이 `Diff` 타입만 가지고는 인터페이스를 마음대로 주무를 수 없습니다. 가장 먼저 특정 인터페이스에서 원하지 않는 속성을 제외하는 `Omit` 타입을 만들어보겠습니다. 그 반대인 `Pick` 타입은 이미 있으니까요.
 
 ```typescript
-type Omit<T, U keyof T> = Pick<T, Exclude<keyof T, U>>
+type Omit<T, U extends keyof T> = Pick<T, Exclude<keyof T, U>>
 
 // Example
 type OmitExample = Omit<{
