@@ -7,21 +7,20 @@ module.exports = {
       name: 'Dohyung Ahn(Rinae)',
       email: 'adhrinae@gmail.com',
       twitter: 'https://twitter.com/adhrinae',
-      github: 'https://github.com/adhrinae'
-    }
+      github: 'https://github.com/adhrinae',
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sass',
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+        name: 'pages',
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -30,27 +29,27 @@ module.exports = {
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
-              classPrefix: 'language-'
-            }
+              classPrefix: 'language-',
+            },
           },
           {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 790,
-              linkImagesToOriginal: false
-            }
+              linkImagesToOriginal: false,
+            },
           },
           'gatsby-remark-autolink-headers',
-          'gatsby-remark-copy-linked-files'
-        ]
-      }
+          'gatsby-remark-copy-linked-files',
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-110939745-1',
-        anonymize: true
-      }
+        anonymize: true,
+      },
     },
     {
       resolve: 'gatsby-plugin-feed',
@@ -74,7 +73,7 @@ module.exports = {
                   description: edge.node.excerpt,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                  custom_elements: [{ 'content:encoded': edge.node.html }]
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 })
               })
             },
@@ -98,11 +97,11 @@ module.exports = {
                 }
               }
             `,
-            output: `/rss.xml`
-          }
-        ]
-      }
+            output: `/rss.xml`,
+          },
+        ],
+      },
     },
-    'gatsby-remark-responsive-iframe'
-  ]
+    'gatsby-remark-responsive-iframe',
+  ],
 }

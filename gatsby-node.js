@@ -20,7 +20,7 @@ const createTagPages = (createPage, edges) => {
   createPage({
     path: '/tags',
     component: tagTemplate,
-    context: { postsByTags }
+    context: { postsByTags },
   })
 
   // create individual tag page
@@ -31,20 +31,23 @@ const createTagPages = (createPage, edges) => {
       component: tagTemplate,
       context: {
         postsByTag,
-        tagName
-      }
+        tagName,
+      },
     })
   })
 }
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
 
   return graphql(`
     {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             excerpt(pruneLength: 250)
@@ -75,7 +78,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,
-        context: {}
+        context: {},
       })
     })
   })

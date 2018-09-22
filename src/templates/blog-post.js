@@ -1,20 +1,14 @@
-import React from 'react'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
 import About from '../components/About'
+import Layout from '../components/Layout'
 
 import './blog-post.scss'
 
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-`
-
 const TagList = ({ tags }) => (
-  <div>
+  <div className="tag-lists">
     <h2 className="title">Similar posts about ...</h2>
     <div className="tags">
       {tags.map(tag => (
@@ -32,14 +26,14 @@ function initUtterances() {
     repo: 'adhrinae/gatsby-blog',
     branch: 'master',
     async: true,
-    'issue-term': 'pathname'
+    'issue-term': 'pathname',
   }
   const utterances = document.createElement('script')
   const aboutBox = document.querySelector('.box')
 
-  for (const [key, val] of Object.entries(utterancesConfig)) {
-    utterances.setAttribute(key, val)
-  }
+  Object.keys(utterancesConfig).forEach(configKey => {
+    utterances.setAttribute(configKey, utterancesConfig[configKey])
+  })
 
   aboutBox.insertAdjacentElement('afterend', utterances)
 }
@@ -51,39 +45,40 @@ export default class Template extends React.Component {
 
   render() {
     const { markdownRemark: post } = this.props.data
-    const { siteUrl } = this.props.data.site.siteMetadata
     const tags = post.frontmatter.tags
 
     return (
-      <div className="container">
-        <div className="columns is-mobile">
-          <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-8-desktop is-offset-2-desktop">
-            <div className="content">
-              <Helmet
-                title={`${post.frontmatter.title} - Rinae's playground`}
-              />
-              <div className="post-title">
-                <h1>{post.frontmatter.title}</h1>
-                <span className="has-text-grey-light is-size-6">
-                  {post.frontmatter.date}
-                </span>
+      <Layout>
+        <div className="container">
+          <div className="columns is-mobile">
+            <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-8-desktop is-offset-2-desktop">
+              <div className="content">
+                <Helmet
+                  title={`${post.frontmatter.title} - Rinae's playground`}
+                />
+                <div className="post-title">
+                  <h1>{post.frontmatter.title}</h1>
+                  <span className="has-text-grey-light is-size-6">
+                    {post.frontmatter.date}
+                  </span>
+                </div>
+                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                <hr />
+                <TagList tags={tags} />
+                <About />
+                <div className="button-wrapper">
+                  <Link to="/" className="button is-info is-large">
+                    <span className="icon is-medium">
+                      <i className="mdi mdi-36px mdi-format-list-bulleted" />
+                    </span>{' '}
+                    <span>BACK TO ALL POSTS</span>
+                  </Link>
+                </div>
               </div>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
-              <hr />
-              <TagList tags={tags} />
-              <About />
-              <ButtonWrapper>
-                <Link to="/" className="button is-info is-large">
-                  <span className="icon is-medium">
-                    <i className="mdi mdi-36px mdi-format-list-bulleted" />
-                  </span>{' '}
-                  <span>BACK TO ALL POSTS</span>
-                </Link>
-              </ButtonWrapper>
             </div>
           </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }

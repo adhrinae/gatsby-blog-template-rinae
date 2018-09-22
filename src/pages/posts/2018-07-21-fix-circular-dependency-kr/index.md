@@ -1,9 +1,10 @@
 ---
-path: "/posts/fix-circular-dependency-kr"
-date: "2018-07-21"
-title: "[번역] 자바스크립트 & 타입스크립트의 순환 참조를 한방에 해결하는 방법"
-category: "Typescript"
+path: '/posts/fix-circular-dependency-kr'
+date: '2018-07-21'
+title: '[번역] 자바스크립트 & 타입스크립트의 순환 참조를 한방에 해결하는 방법'
+category: 'Typescript'
 tags:
+  - Translation
   - Typescript
   - Javascript
   - Node.js

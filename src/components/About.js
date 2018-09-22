@@ -7,7 +7,7 @@ const About = () => (
         <figure className="image">
           <img
             src="https://gravatar.com/avatar/02026487bc28d395fbbee71bed30c43a"
-            alt="gravatar image"
+            alt="gravatar of Ahn Dohyung"
             style={{ borderRadius: '50%' }}
           />
         </figure>
@@ -15,7 +15,7 @@ const About = () => (
       <div className="media-content">
         <div className="content">
           <p>
-            <strong>Rinae(Ahn Dohyung)</strong>
+            <strong>Rinae (Ahn Dohyung)</strong>
             <br />
             Frontend developer. Highly interested in ReactJS, Testing and
             Programming Fundamentals. Also, Have the enthusiasm for learning and

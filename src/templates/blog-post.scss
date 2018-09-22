@@ -20,6 +20,12 @@
       margin: 0 auto;
     }
   }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
 
 // resolve conflicts between bulma css preset and prismjs

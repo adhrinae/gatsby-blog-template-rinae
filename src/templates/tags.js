@@ -1,25 +1,29 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
+import { Link } from 'gatsby'
 
 import Hero from '../components/Hero'
 import PostList from '../components/PostList'
+import Layout from '../components/Layout'
 
-export default function Tags({ pathContext }) {
-  const { postsByTags, postsByTag, tagName } = pathContext
+export default function Tags({ pageContext }) {
+  const { postsByTags, postsByTag, tagName } = pageContext
 
   if (postsByTag) {
     const len = postsByTag.length
 
     return (
-      <div>
-        <Hero
-          title={`${len > 1 ? len + ' posts' : len + ' post'} about ${tagName}`}
-        />
-        <div className="container">
-          <PostList postsData={postsByTag} />
+      <Layout>
+        <div>
+          <Hero
+            title={`${
+              len > 1 ? len + ' posts' : len + ' post'
+            } about ${tagName}`}
+          />
+          <div className="container">
+            <PostList postsData={postsByTag} />
+          </div>
         </div>
-      </div>
+      </Layout>
     )
   } else {
     const lengthByTags = Object.keys(postsByTags)
@@ -27,24 +31,26 @@ export default function Tags({ pathContext }) {
       .sort((a, b) => b.length - a.length)
 
     return (
-      <div>
-        <Hero
-          title="List of all tags"
-          subtitle="sorted by the frequency being tagged"
-        />
-        <div className="container">
-          <div className="tag-list">
-            {lengthByTags.map(tag => (
-              <div className="tags has-addons" key={tag.tagName}>
-                <Link to={`/tags/${tag.tagName}`}>
-                  <span className="tag is-info is-large">{tag.tagName}</span>
-                  <span className="tag is-large">{tag.length}</span>
-                </Link>
-              </div>
-            ))}
+      <Layout>
+        <div>
+          <Hero
+            title="List of all tags"
+            subtitle="sorted by the frequency being tagged"
+          />
+          <div className="container">
+            <div className="tag-list">
+              {lengthByTags.map(tag => (
+                <div className="tags has-addons" key={tag.tagName}>
+                  <Link to={`/tags/${tag.tagName}`}>
+                    <span className="tag is-info is-large">{tag.tagName}</span>
+                    <span className="tag is-large">{tag.length}</span>
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }

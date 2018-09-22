@@ -1,20 +1,27 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
 
-import 'typeface-noto-sans'
 import 'bulma'
-import 'mdi/scss/materialdesignicons.scss'
+import '@mdi/font/scss/materialdesignicons.scss'
 import 'prismjs/themes/prism-tomorrow.css'
 import './layout-style.scss'
 
 import favicon from '../assets/favicon.ico'
 
 const Header = ({ toggled, handleToggled }) => (
-  <nav className="navbar is-info" role="navigation" aria-label="main navigation">
+  <nav
+    className="navbar is-info"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div className="navbar-brand">
-      <Link to="/" className="navbar-item navbar-title" style={{ fontWeight: 'bold' }}>
+      <Link
+        to="/"
+        className="navbar-item navbar-title"
+        style={{ fontWeight: 'bold' }}
+      >
         Rinae's playground
       </Link>
 
@@ -48,7 +55,10 @@ const Footer = () => (
   <footer className="footer">
     <div className="container">
       <div className="content has-text-centered">
-        <p>All content copyright rinae © {new Date().getFullYear()} • All rights reserved.</p>
+        <p>
+          All content copyright rinae © {new Date().getFullYear()} • All rights
+          reserved.
+        </p>
         <p>
           Powered by <a href="https://www.gatsbyjs.org">Gatsby.js</a> and{' '}
           <a href="https://bulma.io">Bulma</a>
@@ -58,9 +68,9 @@ const Footer = () => (
   </footer>
 )
 
-class TemplateWrapper extends Component {
+class Layout extends Component {
   state = {
-    toggled: false
+    toggled: false,
   }
 
   handleToggled = () => {
@@ -77,8 +87,11 @@ class TemplateWrapper extends Component {
           <title>Rinae's playground</title>
           <link rel="shortcut icon" href={favicon} />
         </Helmet>
-        <Header toggled={this.state.toggled} handleToggled={this.handleToggled} />
-        <div>{children()}</div>
+        <Header
+          toggled={this.state.toggled}
+          handleToggled={this.handleToggled}
+        />
+        <div>{children}</div>
         <Footer />
       </div>
     )
@@ -87,11 +100,11 @@ class TemplateWrapper extends Component {
 
 Header.propTypes = {
   toggled: PropTypes.bool,
-  handleToggled: PropTypes.func
+  handleToggled: PropTypes.func,
 }
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
+Layout.propTypes = {
+  children: PropTypes.element.isRequired,
 }
 
-export default TemplateWrapper
+export default Layout
