@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import 'bulma'
 import '@mdi/font/scss/materialdesignicons.scss'
 import 'prismjs/themes/prism-tomorrow.css'
-import './layout-style.scss'
+import './Layout.style.scss'
 
 import favicon from '../assets/favicon.ico'
 
