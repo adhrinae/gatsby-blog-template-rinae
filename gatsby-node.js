@@ -1,7 +1,7 @@
 const path = require('path')
 
 const createTagPages = (createPage, edges) => {
-  const tagTemplate = path.resolve('src/templates/tags.js')
+  const tagTemplate = path.resolve('src/templates/Tags.js')
   const postsByTags = {}
 
   edges.forEach(({ node }) => {
@@ -40,7 +40,7 @@ const createTagPages = (createPage, edges) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
+  const blogPostTemplate = path.resolve(`src/templates/Post.js`)
 
   return graphql(`
     {

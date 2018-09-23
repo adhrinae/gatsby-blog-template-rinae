@@ -321,7 +321,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+  const blogPostTemplate = path.resolve(`src/templates/Post.js`);
 
   return graphql(`
     {
@@ -370,7 +370,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 중요한 점은 저 `path` 속성이 템플릿 컴포넌트로 넘어갈때 GraphQL의 인자로 사용된다는 것입니다.
 
 ```jsx
-// src/templates/blog-post.js
+// src/templates/Post.js
 // ...
 export default function Template({ data }) {
   const { markdownRemark: post } = data;

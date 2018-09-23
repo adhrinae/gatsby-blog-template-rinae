@@ -1,11 +1,11 @@
-import React from 'react'
 import { Link } from 'gatsby'
+import React from 'react'
 
 import Hero from '../components/Hero'
-import PostList from '../components/PostList'
 import Layout from '../components/Layout'
+import PostList from '../components/PostList'
 
-export default function Tags({ pageContext }) {
+const Tags = ({ pageContext }) => {
   const { postsByTags, postsByTag, tagName } = pageContext
 
   if (postsByTag) {
@@ -54,3 +54,5 @@ export default function Tags({ pageContext }) {
     )
   }
 }
+
+export default Tags

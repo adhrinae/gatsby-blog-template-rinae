@@ -1,11 +1,11 @@
-import React from 'react'
 import { graphql } from 'gatsby'
+import React from 'react'
 
-import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 
-export default function IndexPage(props) {
+const IndexPage = props => {
   const edges = props.data.allMarkdownRemark.edges
   const postsData = edges
     .filter(({ node }) => new Date(node.frontmatter.date) < new Date()) // hide reserved posts
@@ -52,3 +52,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default IndexPage

@@ -1,24 +1,12 @@
-import Helmet from 'react-helmet'
+import { graphql, Link } from 'gatsby'
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 
 import About from '../components/About'
 import Layout from '../components/Layout'
+import TagList from '../components/TagList'
 
-import './blog-post.scss'
-
-const TagList = ({ tags }) => (
-  <div className="tag-lists">
-    <h2 className="title">Similar posts about ...</h2>
-    <div className="tags">
-      {tags.map(tag => (
-        <Link className="tag is-info is-medium" to={`/tags/${tag}`} key={tag}>
-          {tag}
-        </Link>
-      ))}
-    </div>
-  </div>
-)
+import './Post.style.scss'
 
 function initUtterances() {
   const utterancesConfig = {
@@ -38,7 +26,7 @@ function initUtterances() {
   aboutBox.insertAdjacentElement('afterend', utterances)
 }
 
-export default class Template extends React.Component {
+class Post extends React.Component {
   componentDidMount() {
     initUtterances()
   }
@@ -101,3 +89,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default Post
