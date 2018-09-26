@@ -6,6 +6,7 @@ import About from '../components/About'
 import Layout from '../components/Layout'
 import TagList from '../components/TagList'
 
+import defaultOgImage from '../assets/blog-og-default-imgae.png'
 import './Post.style.scss'
 
 function initUtterances() {
@@ -32,8 +33,12 @@ class Post extends React.Component {
   }
 
   render() {
-    const { markdownRemark: post } = this.props.data
-    const tags = post.frontmatter.tags
+    const {
+      markdownRemark: post,
+      site: { siteMetadata },
+    } = this.props.data
+    const {tags, coverImage, title, date, description} = post.frontmatter
+    const ogDescription = description || post.excerpt
 
     return (
       <Layout>
@@ -42,12 +47,22 @@ class Post extends React.Component {
             <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-8-desktop is-offset-2-desktop">
               <div className="content">
                 <Helmet>
-                  <title>{post.frontmatter.title} - Rinae's playground</title>
+                  <title>{title} - Rinae's playground</title>
+                  <meta property="og:type" content="article" />
+                  <meta property="og:title" content={title} />
+                  <meta property="og:description" content={ogDescription} />
+                  <meta property="og:image" content={coverImage || defaultOgImage} />
+                  <meta property="og:url" content={siteMetadata.siteUrl} />
+                  <meta property="twitter:card" content="summary" />
+                  <meta property="twitter:site" content="@adhrinae" />
+                  <meta property="twitter:title" content={title} />
+                  <meta property="twitter:description" content={ogDescription} />
+                  <meta property="twitter:image" content={coverImage || defaultOgImage} />
                 </Helmet>
                 <div className="post-title">
-                  <h1>{post.frontmatter.title}</h1>
+                  <h1>{title}</h1>
                   <span className="has-text-grey-light is-size-6">
-                    {post.frontmatter.date}
+                    {date}
                   </span>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -75,6 +90,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      excerpt(pruneLength: 200)
       frontmatter {
         date(formatString: "YYYY/MM/DD")
         path

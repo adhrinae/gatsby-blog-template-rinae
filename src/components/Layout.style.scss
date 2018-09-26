@@ -1,4 +1,7 @@
 @import url('//cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css');
+@import "../../node_modules/bulma/sass/utilities/initial-variables.sass";
+
+// TODO: Change main theme color to `hsl(248, 39%, 39%)`
 
 html,
 body {
@@ -8,9 +11,10 @@ body {
 }
 
 a {
-  color: hsl(248, 39%, 39%);
+  color: $cyan;
 }
 
 footer {
   margin-top: 2rem;
 }
+

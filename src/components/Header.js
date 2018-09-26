@@ -19,7 +19,7 @@ const Header = ({ toggled, handleToggled }) => (
 
       <div
         className={toggled ? 'navbar-burger is-active' : 'navbar-burger'}
-        onClick={() => handleToggled()}
+        onClick={handleToggled}
       >
         <span/>
         <span/>
@@ -44,8 +44,8 @@ const Header = ({ toggled, handleToggled }) => (
 )
 
 Header.propTypes = {
-  toggled: PropTypes.bool,
-  handleToggled: PropTypes.func,
+  toggled: PropTypes.bool.isRequired,
+  handleToggled: PropTypes.func.isRequired,
 }
 
 export default Header
