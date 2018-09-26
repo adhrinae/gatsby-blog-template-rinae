@@ -37,8 +37,9 @@ class Post extends React.Component {
       markdownRemark: post,
       site: { siteMetadata },
     } = this.props.data
-    const {tags, coverImage, title, date, description} = post.frontmatter
+    const {tags, coverImageUrl, title, date, description} = post.frontmatter
     const ogDescription = description || post.excerpt
+    const defaultOgImageUrl = siteMetadata.siteUrl + defaultOgImage
 
     return (
       <Layout>
@@ -51,13 +52,13 @@ class Post extends React.Component {
                   <meta property="og:type" content="article" />
                   <meta property="og:title" content={title} />
                   <meta property="og:description" content={ogDescription} />
-                  <meta property="og:image" content={coverImage || defaultOgImage} />
+                  <meta property="og:image" content={coverImageUrl || defaultOgImageUrl} />
                   <meta property="og:url" content={siteMetadata.siteUrl} />
                   <meta property="twitter:card" content="summary" />
                   <meta property="twitter:site" content="@adhrinae" />
                   <meta property="twitter:title" content={title} />
                   <meta property="twitter:description" content={ogDescription} />
-                  <meta property="twitter:image" content={coverImage || defaultOgImage} />
+                  <meta property="twitter:image" content={coverImageUrl || defaultOgImageUrl} />
                 </Helmet>
                 <div className="post-title">
                   <h1>{title}</h1>

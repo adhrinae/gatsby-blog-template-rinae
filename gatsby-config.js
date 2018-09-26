@@ -16,6 +16,20 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-twitter',
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://adhrinae.github.io',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+          },
+        },
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
