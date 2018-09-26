@@ -55,8 +55,8 @@ class Post extends React.Component {
                   <meta property="og:description" content={ogDescription} />
                   <meta property="og:image" content={coverImageUrl || defaultOgImageUrl} />
                   <meta property="og:url" content={ogUrl} />
-                  <meta property="twitter:card" content="summary" />
-                  <meta property="twitter:site" content="@adhrinae" />
+                  <meta name="twitter:card" content="summary" />
+                  <meta name="twitter:site" content="@adhrinae" />
                 </Helmet>
                 <div className="post-title">
                   <h1>{title}</h1>
