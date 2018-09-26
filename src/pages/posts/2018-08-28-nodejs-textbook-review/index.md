@@ -1,5 +1,5 @@
 ---
-path: '/posts/nodejs-textbook-reveiw'
+path: '/posts/nodejs-textbook-review'
 date: '2018-08-28'
 title: "'Node.js 교과서' 감상평"
 category: 'Review'
