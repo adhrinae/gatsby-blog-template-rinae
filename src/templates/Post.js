@@ -50,7 +50,7 @@ class Post extends React.Component {
               <div className="content">
                 <Helmet>
                   <title>{title} - Rinae's playground</title>
-                  <meta property="og:type" content="blog" />
+                  <meta property="og:type" content="article" />
                   <meta property="og:title" content={title} />
                   <meta property="og:description" content={ogDescription} />
                   <meta property="og:image" content={coverImageUrl || defaultOgImageUrl} />
@@ -89,7 +89,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
-      excerpt(pruneLength: 200)
+      excerpt(pruneLength: 300)
       frontmatter {
         date(formatString: "YYYY/MM/DD")
         path
