@@ -14,8 +14,6 @@ const createTagPages = (createPage, edges) => {
     })
   })
 
-  const tags = Object.keys(postsByTags)
-
   // create All Tags page
   createPage({
     path: '/tags',
@@ -24,8 +22,7 @@ const createTagPages = (createPage, edges) => {
   })
 
   // create individual tag page
-  tags.forEach(tagName => {
-    const postsByTag = postsByTags[tagName]
+  Object.entries(postsByTags).forEach(([tagName, postsByTag]) => {
     createPage({
       path: `/tags/${tagName}`,
       component: tagTemplate,

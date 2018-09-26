@@ -13,17 +13,15 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <div>
-        <Hero
-          title="Welcome to my writing playground"
-          subtitle="about Translation, Ruby, Javascript, Practical Dev etc."
-        />
+      <Hero
+        title="Welcome to my writing playground"
+        subtitle="about Translation, Ruby, Javascript, Practical Dev etc."
+      />
 
-        <div className="container">
-          <div className="columns">
-            <div className="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet">
-              <PostList postsData={postsData} />
-            </div>
+      <div className="container">
+        <div className="columns">
+          <div className="column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet">
+            <PostList postsData={postsData} />
           </div>
         </div>
       </div>

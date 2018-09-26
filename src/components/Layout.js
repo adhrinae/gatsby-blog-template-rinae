@@ -25,7 +25,7 @@ class Layout extends Component {
     const { children } = this.props
 
     return (
-      <div>
+      <>
         <Helmet>
           <meta charSet="utf-8" />
           <title>Rinae's playground</title>
@@ -35,9 +35,9 @@ class Layout extends Component {
           toggled={this.state.toggled}
           handleToggled={this.handleToggled}
         />
-        <div>{children}</div>
+        {children}
         <Footer />
-      </div>
+      </>
     )
   }
 }

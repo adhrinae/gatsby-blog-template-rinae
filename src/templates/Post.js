@@ -41,9 +41,9 @@ class Post extends React.Component {
           <div className="columns is-mobile">
             <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-8-desktop is-offset-2-desktop">
               <div className="content">
-                <Helmet
-                  title={`${post.frontmatter.title} - Rinae's playground`}
-                />
+                <Helmet>
+                  <title>{post.frontmatter.title} - Rinae's playground</title>
+                </Helmet>
                 <div className="post-title">
                   <h1>{post.frontmatter.title}</h1>
                   <span className="has-text-grey-light is-size-6">

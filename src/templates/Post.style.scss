@@ -1,31 +1,32 @@
 .container {
-  margin-top: 2rem !important;
+  margin-top: 2rem;
+}
 
-  .content {
-    .post-title {
-      margin-bottom: 2rem;
-      h1 {
-        display: inline-block;
-        margin-right: 0.7rem;
-      }
-    }
+.content {
+  .post-title {
+    margin-bottom: 2rem;
 
-    ol,
-    ul li:last-child {
-      margin-bottom: 1rem;
-    }
-
-    img {
-      display: block;
-      margin: 0 auto;
+    h1 {
+      display: inline-block;
+      margin-right: 0.7rem;
     }
   }
 
-  .button-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+  ol,
+  ul li:last-child {
+    margin-bottom: 1rem;
   }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 // resolve conflicts between bulma css preset and prismjs
