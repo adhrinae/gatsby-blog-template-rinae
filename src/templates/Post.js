@@ -6,7 +6,7 @@ import About from '../components/About'
 import Layout from '../components/Layout'
 import TagList from '../components/TagList'
 
-import defaultOgImage from '../assets/blog-og-default-imgae.png'
+import defaultOgImage from '../assets/blog-og-default-image.png'
 import './Post.style.scss'
 
 function initUtterances() {
@@ -37,8 +37,9 @@ class Post extends React.Component {
       markdownRemark: post,
       site: { siteMetadata },
     } = this.props.data
-    const {tags, coverImageUrl, title, date, description} = post.frontmatter
+    const {tags, coverImageUrl, title, date, description, path} = post.frontmatter
     const ogDescription = description || post.excerpt
+    const ogUrl = siteMetadata.siteUrl + path
     const defaultOgImageUrl = siteMetadata.siteUrl + defaultOgImage
 
     return (
@@ -49,16 +50,13 @@ class Post extends React.Component {
               <div className="content">
                 <Helmet>
                   <title>{title} - Rinae's playground</title>
-                  <meta property="og:type" content="article" />
+                  <meta property="og:type" content="blog" />
                   <meta property="og:title" content={title} />
                   <meta property="og:description" content={ogDescription} />
                   <meta property="og:image" content={coverImageUrl || defaultOgImageUrl} />
-                  <meta property="og:url" content={siteMetadata.siteUrl} />
+                  <meta property="og:url" content={ogUrl} />
                   <meta property="twitter:card" content="summary" />
                   <meta property="twitter:site" content="@adhrinae" />
-                  <meta property="twitter:title" content={title} />
-                  <meta property="twitter:description" content={ogDescription} />
-                  <meta property="twitter:image" content={coverImageUrl || defaultOgImageUrl} />
                 </Helmet>
                 <div className="post-title">
                   <h1>{title}</h1>
