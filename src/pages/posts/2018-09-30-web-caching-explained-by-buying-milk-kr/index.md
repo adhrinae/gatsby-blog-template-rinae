@@ -106,7 +106,7 @@ _어쨌든_, 우유를 마을에 내다 팔고 싶지만 아주 제한된 시간
 
 이 방식은 Facebook 이나 Amazon 같이 자주 접속하는 사이트에 아주 효과적인 방식입니다. 그 회사들의 서버 비용을 줄이는데도 도움이 되겠죠. 엄청난 양의 요청을 줄일 수 있으니까요.
 
-![집에 있는 냉장고를 활용하는 방법](https://cl.ly/e0835e7e1f0f/web-caching-milk-9.png)
+![집에 있는 냉장고를 활용하는 방법](https://cl.ly/5344ed00eee3/web-caching-milk-8.png)
 
 ![브라우저 캐시를 활용](https://cl.ly/6848d5074af6/web-caching-milk-9.png)
 
