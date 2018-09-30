@@ -8,6 +8,25 @@
   },
   "version": "1.0.0",
   "author": "adhrinae@gmail.com",
+  "keywords": [
+    "gatsby",
+    "blog",
+    "react"
+  ],
+  "browserslist": [
+    "> 1%",
+    "IE >= 11",
+    "last 2 versions"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "publish": "gh-pages -d public -b master -r 'git@github.com:adhrinae/adhrinae.github.io.git'",
+    "deploy:ci": "npm run build && npm run publish",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
+  },
   "dependencies": {
     "@mdi/font": "^2.8.94",
     "bulma": "^0.7.1",
@@ -34,26 +53,15 @@
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0"
   },
-  "keywords": [
-    "gatsby",
-    "blog",
-    "react"
-  ],
-  "browserslist": [
-    "> 1%",
-    "IE >= 11",
-    "last 2 versions"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "publish": "gh-pages -d public -b master -r 'git@github.com:adhrinae/adhrinae.github.io.git'",
-    "deploy:ci": "npm run build && npm run publish",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
-  },
   "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
     "gh-pages": "^2.0.0",
     "prettier": "^1.14.3"
   }
