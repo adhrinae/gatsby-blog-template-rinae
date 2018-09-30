@@ -21,9 +21,9 @@ const Header = ({ toggled, handleToggled }) => (
         className={toggled ? 'navbar-burger is-active' : 'navbar-burger'}
         onClick={handleToggled}
       >
-        <span/>
-        <span/>
-        <span/>
+        <span />
+        <span />
+        <span />
       </div>
     </div>
 
@@ -45,7 +45,7 @@ const Header = ({ toggled, handleToggled }) => (
 
 Header.propTypes = {
   toggled: PropTypes.bool.isRequired,
-  handleToggled: PropTypes.func.isRequired,
+  handleToggled: PropTypes.func.isRequired
 }
 
 export default Header

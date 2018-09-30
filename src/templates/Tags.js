@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
@@ -49,6 +50,14 @@ const Tags = ({ pageContext }) => {
       </Layout>
     )
   }
+}
+
+Tags.propTypes = {
+  pageContext: PropTypes.shape({
+    postsByTags: PropTypes.object,
+    postsByTag: PropTypes.array,
+    tagName: PropTypes.string
+  })
 }
 
 export default Tags

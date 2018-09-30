@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const TagList = ({ tags }) => (
   <div className="tag-lists">
@@ -13,5 +14,9 @@ const TagList = ({ tags }) => (
     </div>
   </div>
 )
+
+TagList.propTypes = {
+  tags: PropTypes.arrayOf(PropTypes.string)
+}
 
 export default TagList

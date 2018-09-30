@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
@@ -27,6 +28,20 @@ const IndexPage = props => {
       </div>
     </Layout>
   )
+}
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.arrayOf(PropTypes.shape({
+        node: PropTypes.shape({
+          excerpt: PropTypes.string,
+          id: PropTypes.string,
+          frontmatter: PropTypes.object
+        })
+      }))
+    })
+  })
 }
 
 export const pageQuery = graphql`

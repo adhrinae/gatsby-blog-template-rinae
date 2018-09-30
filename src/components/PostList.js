@@ -30,10 +30,10 @@ PostList.propTypes = {
         date: PropTypes.string,
         path: PropTypes.string,
         tags: PropTypes.array,
-        title: PropTypes.string,
-      }),
+        title: PropTypes.string
+      })
     })
-  ),
+  )
 }
 
 export default PostList
