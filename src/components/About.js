@@ -18,7 +18,7 @@ const About = () => (
             <strong>Rinae (Ahn Dohyung)</strong>
             <br />
             Frontend developer. Highly interested in ReactJS, Testing and
-            Programming Fundamentals. Also, Have the enthusiasm for learning and
+            Programming Fundamentals & Typescript. Also, Have the enthusiasm for learning and
             sharing new programming issues, especially with translation.
           </p>
         </div>

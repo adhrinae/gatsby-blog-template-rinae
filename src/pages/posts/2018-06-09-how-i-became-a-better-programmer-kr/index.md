@@ -1,8 +1,8 @@
 ---
-path: "/posts/how-i-became-a-better-programmer-kr"
-date: "2018-06-09"
-title: "[번역] 나는 어떻게 더 나은 프로그래머가 되었는가"
-category: "Translation"
+path: '/posts/how-i-became-a-better-programmer-kr'
+date: '2018-06-09'
+title: '[번역] 나는 어떻게 더 나은 프로그래머가 되었는가'
+category: 'Developer'
 tags:
   - Learning
   - Translation
@@ -66,12 +66,12 @@ React Conf 에서 만난 몇 분이 더 나은 개발자가 되기 위한 조언
 
 몇 가지 추천할만한 방법들을 리스트로 추려 보았습니다. 이 모든 방법들은 제 프로그래머 커리어에 커다란 영향을 주었습니다. 대부분은 지금도 다양한 형태로 도움이 되고 있으며 새로운 아이디어를 깊게 분석하는데 도움이 됩니다. **좋은 프로그래머가 되기 위해 아래 모든 일을 다 할 필요는 없습니다.** 그리고 분명 여러분의 성장을 도울 수 있는 다른 방법들이 있습니다. 그저 저에게 도움이 되었던 방법을 말씀드려 보겠습니다.
 
-* **C 배우기** - 아직 해보신 적 없다면 기본만 살펴보시기 바랍니다. 왜 모두들 C 를 가지고 불평하는지 이해할만한 가치는 있다고 생각합니다.
-* **컴파일러 작성해보기** - 아마 익숙하지 않은 일을 하면서 배우는 방법 중 최고봉일겁니다. [Super Tiny Compiler](https://github.com/thejameskyle/the-super-tiny-compiler)를 살펴보세요.
-* **매크로를 배우기** - Scheme, Lisp, Clojure(Script)를 살펴보세요. 매크로는 코드를 보는 방법을 크게 바꾸어줍니다.
-* **SICP** - [SICP](https://mitpress.mit.edu/sites/default/files/sicp/index.html)는 아주 오래된 책이지만 여전히 유용한 정보를 담고 있는 책이라고 생각합니다. (그렇게 생각하지 않는 사람들도 있습니다) 이 책은 프로그래밍 지식이 아주 얕은 독자를 대상으로 [meta-circular evaluator](https://en.m.wikipedia.org/wiki/Meta-circular_evaluator)와 컴파일러를 구현하는 방법을 처음부터 끝까지 알려줍니다. 제가 재밌게 읽으면서 컴파일러를 더 깊이 알아볼 수 있던 책은 [Lisp In Small Pieces](https://www.amazon.com/Lisp-Small-Pieces-Christian-Queinnec/dp/0521545668)였습니다.
-* **Continuation 을 이해하기** - [Continuation](https://en.wikipedia.org/wiki/Continuation)은 저수준의 제어 흐름 원리입니다. Scheme 은 이를 유일하게 구현한 언어이며, 실무에 사용할 일은 전혀 없을테지만 제어 흐름을 생각하는 방식을 바꿔줄겁니다. 저는 이 내용을 설명하기 위해 [블로그 포스트](http://jlongster.com/Whats-in-a-Continuation)도 작성했습니다.
-* **아무거나 새로운 프로그래밍 언어 배우기** - 무엇을 하시던지 다른 언어를 배우시는게 좋습니다. 제가 추천하는 언어는 Clojure, Rust, Elm, OCaml/Reason, Go, Scheme 입니다. 이 모든 언어들은 각자 고유한 기능이 있으며 그 기능을 통해 새로운 사고방식을 배우도록 만들어줍니다.
+- **C 배우기** - 아직 해보신 적 없다면 기본만 살펴보시기 바랍니다. 왜 모두들 C 를 가지고 불평하는지 이해할만한 가치는 있다고 생각합니다.
+- **컴파일러 작성해보기** - 아마 익숙하지 않은 일을 하면서 배우는 방법 중 최고봉일겁니다. [Super Tiny Compiler](https://github.com/thejameskyle/the-super-tiny-compiler)를 살펴보세요.
+- **매크로를 배우기** - Scheme, Lisp, Clojure(Script)를 살펴보세요. 매크로는 코드를 보는 방법을 크게 바꾸어줍니다.
+- **SICP** - [SICP](https://mitpress.mit.edu/sites/default/files/sicp/index.html)는 아주 오래된 책이지만 여전히 유용한 정보를 담고 있는 책이라고 생각합니다. (그렇게 생각하지 않는 사람들도 있습니다) 이 책은 프로그래밍 지식이 아주 얕은 독자를 대상으로 [meta-circular evaluator](https://en.m.wikipedia.org/wiki/Meta-circular_evaluator)와 컴파일러를 구현하는 방법을 처음부터 끝까지 알려줍니다. 제가 재밌게 읽으면서 컴파일러를 더 깊이 알아볼 수 있던 책은 [Lisp In Small Pieces](https://www.amazon.com/Lisp-Small-Pieces-Christian-Queinnec/dp/0521545668)였습니다.
+- **Continuation 을 이해하기** - [Continuation](https://en.wikipedia.org/wiki/Continuation)은 저수준의 제어 흐름 원리입니다. Scheme 은 이를 유일하게 구현한 언어이며, 실무에 사용할 일은 전혀 없을테지만 제어 흐름을 생각하는 방식을 바꿔줄겁니다. 저는 이 내용을 설명하기 위해 [블로그 포스트](http://jlongster.com/Whats-in-a-Continuation)도 작성했습니다.
+- **아무거나 새로운 프로그래밍 언어 배우기** - 무엇을 하시던지 다른 언어를 배우시는게 좋습니다. 제가 추천하는 언어는 Clojure, Rust, Elm, OCaml/Reason, Go, Scheme 입니다. 이 모든 언어들은 각자 고유한 기능이 있으며 그 기능을 통해 새로운 사고방식을 배우도록 만들어줍니다.
 
 ---
 

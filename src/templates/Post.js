@@ -1,6 +1,7 @@
 import { graphql, Link } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
 
 import About from '../components/About'
 import Layout from '../components/Layout'
@@ -15,7 +16,7 @@ function initUtterances() {
     repo: 'adhrinae/gatsby-blog',
     branch: 'master',
     async: true,
-    'issue-term': 'pathname',
+    'issue-term': 'pathname'
   }
   const utterances = document.createElement('script')
   const aboutBox = document.querySelector('.box')
@@ -35,9 +36,16 @@ class Post extends React.Component {
   render() {
     const {
       markdownRemark: post,
-      site: { siteMetadata },
+      site: { siteMetadata }
     } = this.props.data
-    const {tags, coverImageUrl, title, date, description, path} = post.frontmatter
+    const {
+      tags,
+      coverImageUrl,
+      title,
+      date,
+      description,
+      path
+    } = post.frontmatter
     const ogDescription = description || post.excerpt
     const ogUrl = siteMetadata.siteUrl + path
     const defaultOgImageUrl = siteMetadata.siteUrl + defaultOgImage
@@ -49,20 +57,21 @@ class Post extends React.Component {
             <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-8-desktop is-offset-2-desktop">
               <div className="content">
                 <Helmet>
-                  <title>{title} - Rinae's playground</title>
+                  <title>{title} - Rinae's devlog</title>
                   <meta property="og:type" content="article" />
                   <meta property="og:title" content={title} />
                   <meta property="og:description" content={ogDescription} />
-                  <meta property="og:image" content={coverImageUrl || defaultOgImageUrl} />
+                  <meta
+                    property="og:image"
+                    content={coverImageUrl || defaultOgImageUrl}
+                  />
                   <meta property="og:url" content={ogUrl} />
                   <meta name="twitter:card" content="summary" />
                   <meta name="twitter:site" content="@adhrinae" />
                 </Helmet>
                 <div className="post-title">
                   <h1>{title}</h1>
-                  <span className="has-text-grey-light is-size-6">
-                    {date}
-                  </span>
+                  <span className="has-text-grey-light is-size-6">{date}</span>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 <hr />
@@ -85,6 +94,21 @@ class Post extends React.Component {
   }
 }
 
+Post.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        siteUrl: PropTypes.string
+      })
+    }),
+    markdownRemark: PropTypes.shape({
+      html: PropTypes.string,
+      excerpt: PropTypes.string,
+      frontmatter: PropTypes.object
+    })
+  })
+}
+
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
@@ -95,6 +119,8 @@ export const pageQuery = graphql`
         path
         title
         tags
+        coverImageUrl
+        description
       }
     }
     site {

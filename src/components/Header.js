@@ -14,7 +14,7 @@ const Header = ({ toggled, handleToggled }) => (
         className="navbar-item navbar-title"
         style={{ fontWeight: 'bold' }}
       >
-        Rinae's playground
+        Rinae's devlog
       </Link>
 
       <div

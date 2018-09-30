@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://adhrinae.github.io',
-    title: "rinae's blog",
+    title: "Rinae's devlog",
     description: 'about Translation, Ruby, Javascript, Practical Dev etc.',
     author: {
-      name: 'Dohyung Ahn(Rinae)',
+      name: 'Ahn Dohyung (Rinae)',
       email: 'adhrinae@gmail.com',
       twitter: 'https://twitter.com/adhrinae',
       github: 'https://github.com/adhrinae',

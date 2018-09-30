@@ -14,7 +14,7 @@ import './Layout.style.scss'
 
 class Layout extends Component {
   state = {
-    toggled: false,
+    toggled: false
   }
 
   handleToggled = () => {
@@ -28,7 +28,7 @@ class Layout extends Component {
       <>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Rinae's playground</title>
+          <title>Rinae's devlog</title>
           <link rel="shortcut icon" href={favicon} />
         </Helmet>
         <Header
@@ -43,7 +43,10 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element)
+  ])
 }
 
 export default Layout
