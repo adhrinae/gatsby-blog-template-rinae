@@ -9,7 +9,7 @@ import favicon from '../assets/favicon.ico'
 
 import '@mdi/font/scss/materialdesignicons.scss'
 import 'bulma'
-import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/themes/prism-solarizedlight.css'
 import './Layout.style.scss'
 
 class Layout extends Component {
