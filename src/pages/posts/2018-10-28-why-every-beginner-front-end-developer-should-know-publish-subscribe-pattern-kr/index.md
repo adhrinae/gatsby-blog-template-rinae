@@ -45,7 +45,7 @@ JS 코드를 작성하는데 많은 노력을 들이면서 상호작용, 세부 
 
 앱은 네트워크 이벤트, 사용자의 조작, 타이밍이 설정된 동작 등 여러 종류의 비동기적인 동작에 적절하게 응답해야 합니다. 그렇게 갑자기 "비동기" 와 "경합 상태" 라 불리는 괴물들이 문을 두드립니다.
 
-![event flow](https://cl.ly/a6771d0e8c73/pub-sub1.png)
+![event flow](https://cl.ly/c5b573ef01c7/pub-sub-1-modified.png)
 
 멋지게 모듈화된 코드가 비동기 코드라는 못난 배우자와 짝을 맺어야하는 상황이 되었습니다. 이제 가려운 기분이 어디서 오는지 명확해졌습니다. _"대체 이놈의 비동기 코드를 어느 부분에 두어야 하지?"_ 라고 어려운 질문이 고개를 들기 시작합니다.
 
@@ -89,8 +89,7 @@ JS 코드를 작성하는데 많은 노력을 들이면서 상호작용, 세부 
 
 이제 세부 사항을 기반으로 앱의 기본적인 동작 흐름을 차트로 그려보겠습니다.
 
-![our first user story](https://cl.ly/b9489c05e9e3/pub-sub2.png)
-[참고: 도시 이름을 찾는 방법은 아주 어려운게 아닙니다. 아주 쉬운 Google Maps API 가 제공됩니다. [여기서 확인해보세요!](https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding)]
+![our first user story](https://cl.ly/4a2966b1b79a/pub-sub-2-modified.png)
 
 보시다시피 그리 복잡하진 않을겁니다.
 
@@ -193,7 +192,8 @@ init()
 
 그러면 새로운 플로우차트는 이렇게 됩니다.
 
-![next user story](https://cl.ly/101c0c4a6cbe/pub-sub3.png)
+![next user story](https://cl.ly/fced73ac4cb7/pub-sub-3-modified.png)
+[참고: 도시 이름을 찾는 방법은 아주 어려운게 아닙니다. 아주 쉬운 Google Maps API 가 제공됩니다. [여기서 확인해보세요!](https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding)]
 
 Google API 로 도시 이름을 가져올 때 주요한 특징이 있습니다. **즉시 가져오는게 아니라는 겁니다.** Google 의 자바스크립트 라이브러리에서 적절한 서비스를 호출하면 응답이 돌아올 때까지 약간의 시간이 걸립니다. 덕분에 조금 혼란스럽지만, 배우는데 확실히 도움이 되는 문제가 나타났습니다.
 
