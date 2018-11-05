@@ -99,52 +99,52 @@ JS 코드를 작성하는데 많은 노력을 들이면서 상호작용, 세부 
 
 ```javascript
 /* map.js */
-let googleMap
-let myPlaces = []
+let googleMap;
+let myPlaces = [];
 
 function init() {
   googleMap = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 0, lng: 0 },
     zoom: 3
-  })
+  });
 
-  googleMap.markerList = []
-  googleMap.addListener('click', addPlace)
+  googleMap.markerList = [];
+  googleMap.addListener('click', addPlace);
 
-  const placesFromLocalstorage = JSON.parse(localStorage.getItem('myPlaces'))
+  const placesFromLocalstorage = JSON.parse(localStorage.getItem('myPlaces'));
   // localStorage에 뭔가 있으면 현재 장소 리스트로 설정한다
   if (Array.isArray(placesFromLocalstorage)) {
-    myPlaces = placesFromLocalstorage
-    renderMarkers()
+    myPlaces = placesFromLocalstorage;
+    renderMarkers();
   }
 }
 
 function addPlace(event) {
   myPlaces.push({
     position: event.latLng
-  })
+  });
 
   // 마커가 추가되면 랜더링하면서 localStorage와 동기화한다
-  localStorage.setItem('myPlaces', JSON.stringify(myPlaces))
-  renderMarkers()
+  localStorage.setItem('myPlaces', JSON.stringify(myPlaces));
+  renderMarkers();
 }
 
 function renderMarkers() {
-  googleMap.markerList.forEach(m => m.setMap(null)) // 모든 마커 제거
-  googleMap.markerList = []
+  googleMap.markerList.forEach(m => m.setMap(null)); // 모든 마커 제거
+  googleMap.markerList = [];
 
   // myPlaces 배열의 요소를 기반으로 마커를 추가한다
   myPlaces.forEach(place => {
     const marker = new google.maps.Marker({
       position: place.position,
       map: googleMap
-    })
+    });
 
-    googleMap.markerList.push(marker)
-  })
+    googleMap.markerList.push(marker);
+  }):
 }
 
-init()
+init();
 ```
 
 잽싸게 분석해봅시다.
@@ -211,8 +211,8 @@ UI 이야기로 돌아가서 확실히 보이는 문제를 하나 짚어보겠�
 
 ```javascript
 /* dataService.js */
-let myPlaces = []
-const geocoder = new google.maps.Geocoder()
+let myPlaces = [];
+const geocoder = new google.maps.Geocoder();
 
 export function addPlace(latLng) {
   // Google API 를 실행하여 도시 이름을 검색한다.
@@ -220,101 +220,103 @@ export function addPlace(latLng) {
   geocoder.geocode({ location: latLng }, function(results) {
     try {
       // 콜백 안에서 결과에 따른 도시 이름을 추출한다
-      const cityName = results.find(result => result.types.includes('locality'))
-        .address_components[0].long_name
+      const cityName = results
+        .find(result => result.types.includes('locality'))
+        .address_components[0]
+        .long_name;
 
       // 그리고 우리가 준비해놓은 변수에 집어넣는다
-      myPlaces.push({ position: latLng, name: cityName })
+      myPlaces.push({ position: latLng, name: cityName });
 
       // 그 다음 localStorage와 동기화한다
-      localStorage.setItem('myPlaces', JSON.stringify(myPlaces))
+      localStorage.setItem('myPlaces', JSON.stringify(myPlaces));
     } catch (e) {
       // 도시를 찾을 수 없을 때 콘솔에 메세지를 출력한다
-      console.error('No city found in this location! :(')
+      console.error('No city found in this location! :(');
     }
-  })
+  });
 }
 
 // 현재 가지고 있는 장소의 목록을 출력
 export function getPlaces() {
-  return myPlaces
+  return myPlaces;
 }
 
 // localStorage에 있는 정보를 꺼내 콜렉션에 넣는 함수
 function initLocalStorage() {
-  const placesFromLocalStorage = JSON.parse(localStorage.getItem('myPlaces'))
+  const placesFromLocalStorage = JSON.parse(localStorage.getItem('myPlaces'));
   if (Array.isArray(placesFromLocalStorage)) {
-    myPlaces = placesFromLocalStorage
-    publish() // 지금은 만들어지지 않은 함수. 나중에 적용될 예정
+    myPlaces = placesFromLocalStorage;
+    publish(); // 지금은 만들어지지 않은 함수. 나중에 적용될 예정
   }
 }
 
-initLocalStorage()
+initLocalStorage();
 ```
 
 **맵 컴포넌트 파일**
 
 ```javascript
-// map.js
-let googleMap
+/* map.js */
+let googleMap;
 
-import { addPlace, getPlaces } from './dataService.js'
+import { addPlace, getPlaces } from './dataService.js';
 
 function init() {
   googleMap = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 0, lng: 0 },
     zoom: 3
-  })
+  });
 
-  googleMap.markerList = []
-  googleMap.addListener('click', addMarker)
+  googleMap.markerList = [];
+  googleMap.addListener('click', addMarker);
 }
 
 function addMarker(event) {
-  addPlace(event.latLng)
-  renderMarkers()
+  addPlace(event.latLng);
+  renderMarkers();
 }
 
 function renderMarkers() {
-  googleMap.markerList.forEach(m => m.setMap(null)) // 모든 마커 제거
-  googleMap.markerList = []
+  googleMap.markerList.forEach(m => m.setMap(null)); // 모든 마커 제거
+  googleMap.markerList = [];
 
   // myPlaces 배열의 요소를 기반으로 마커를 추가한다
   getPlaces().forEach(place => {
     const marker = new google.maps.Marker({
       position: place.position,
       map: googleMap
-    })
+    });
 
-    googleMap.markerList.push(marker)
-  })
+    googleMap.markerList.push(marker);
+  });
 }
 
-init()
+init();
 ```
 
 **사이드바 컴포넌트 파일**
 
 ```javascript
 /* sidebar.js */
-import { getPlaces } from './dataService.js'
+import { getPlaces } from './dataService.js';
 
 function renderCities() {
   // 도시 목록을 표현하기 위한 DOM 엘리먼트를 가져온다
-  const cityListElement = document.getElementById('citiesList')
+  const cityListElement = document.getElementById('citiesList');
 
   // 먼저 클리어 하고
-  cityListElement.innerHTML = ''
+  cityListElement.innerHTML = '';
 
   // forEach 함수를 써서 하나씩 다시 리스트를 그려낸다.
   getPlaces().forEach(place => {
-    const cityElement = document.createElement('div')
-    cityElement.innerText = place.name
-    cityListElement.appendChild(cityElement)
-  })
+    const cityElement = document.createElement('div');
+    cityElement.innerText = place.name;
+    cityListElement.appendChild(cityElement);
+  });
 }
 
-renderCities()
+renderCities();
 ```
 
 이제 우리를 가렵게 만들었던 큰 부분은 사라졌습니다. 코드는 다시 깔끔하게 알맞은 위치에 놓였습니다. 하지만 무작정 기뻐하지 말고 코드를 한번 실행시켜 봅시다.
@@ -331,8 +333,8 @@ _어떤 액션을 실행해도 인터페이스가 반응하지 않네요._
 ```javascript
 // ...
 setInterval(() => {
-  renderCities()
-}, 1000)
+  renderCities();
+}, 1000);
 // ...
 ```
 
@@ -356,33 +358,35 @@ UI 를 업데이트하는 함수를 정의하고 완전히 다른 부분으로 �
 
 까짓거 한 번 해보죠! 서비스 쪽에 함수를 기억할 수 있는 공간을 마련해두고 특정한 시점에 실행되도록 만들어보겠습니다.
 
-```javascript{3,5-7,17-20}
+```javascript{3,5-7,20-22}
 /* dataService.js */
 // ...
-let changeListener = null
+let changeListener = null;
 
 export function subscribe(callbackFunction) {
-  changeListener = callbackFunction
+  changeListener = callbackFunction;
 }
 
 export function addPlace(latLng) {
   geocoder.geocode({ location: latLng }, function(results) {
     try {
-      const cityName = results.find(result => result.types.includes('locality'))
-        .address_components[0].long_name
+      const cityName = results
+        .find(result => result.types.includes('locality'))
+        .address_components[0]
+        .long_name;
 
-      myPlaces.push({ position: latLng, name: cityName })
+      myPlaces.push({ position: latLng, name: cityName });
 
       // 추가된 부분
       if (changeListener) {
-        changeListener()
+        changeListener();
       }
 
-      localStorage.setItem('myPlaces', JSON.stringify(myPlaces))
+      localStorage.setItem('myPlaces', JSON.stringify(myPlaces));
     } catch (e) {
-      console.error('No city found in this location! :(')
+      console.error('No city found in this location! :(');
     }
-  })
+  });
 }
 // ...
 ```
@@ -391,10 +395,10 @@ export function addPlace(latLng) {
 
 ```javascript
 /* sidebar.js */
-import { getPlaces, subscribe } from './dataService'
+import { getPlaces, subscribe } from './dataService';
 // ...
-renderCities()
-subscribe(renderCities)
+renderCities();
+subscribe(renderCities);
 ```
 
 어떻게 동작하는지 보이시나요? 사이드바를 다루는 코드가 실행되면서 **`renderCities` 함수를 `dataService` 안에 등록했습니다.**
@@ -410,37 +414,39 @@ subscribe(renderCities)
 ```javascript
 /* dataService.js */
 // ...
-let changeListeners = []
+let changeListeners = [];
 
 export function subscribe(callbackFunction) {
-  changeListeners.push(callbackFunction)
+  changeListeners.push(callbackFunction);
 }
 // ...
 ```
 
 이제 코드를 좀 정리하고 모든 리스너를 실행하는 함수를 작성하겠습니다.
 
-```javascript{3-5,16}
+```javascript{3-5,18}
 /* dataService.js */
 // 위에 작성한 코드 바로 아래에
 function publish() {
-  changeListeners.forEach(changeListener => changeListener())
+  changeListeners.forEach(changeListener => changeListener());
 }
 
 export function addPlace(latLng) {
   geocoder.geocode({ location: latLng }, function(results) {
     try {
-      const cityName = results.find(result => result.types.includes('locality'))
-        .address_components[0].long_name
+      const cityName = results
+        .find(result => result.types.includes('locality'))
+        .address_components[0]
+        .long_name;
 
-      myPlaces.push({ position: latLng, name: cityName })
+      myPlaces.push({ position: latLng, name: cityName });
 
       // 변경된 부분
-      publish()
+      publish();
 
-      localStorage.setItem('myPlaces', JSON.stringify(myPlaces))
+      localStorage.setItem('myPlaces', JSON.stringify(myPlaces));
     } catch (e) {
-      console.error('No city found in this location! :(')
+      console.error('No city found in this location! :(');
     }
   })
 }
@@ -450,14 +456,14 @@ export function addPlace(latLng) {
 
 ```javascript
 /* map.js */
-import { addPlace, getPlaces, subscribe } from './dataService'
+import { addPlace, getPlaces, subscribe } from './dataService';
 
-let googleMap
+let googleMap;
 // ...
-init()
-renderMarkers()
+init();
+renderMarkers();
 
-subscribe(renderMarkers)
+subscribe(renderMarkers);
 ```
 
 수신자를 데이터를 전송하는데 사용하려면 어떻게 해야할까요? 이런 식으로 _리스너에 직접 인자로_ 전달해 줄 수 있습니다.
@@ -472,7 +478,7 @@ export function addPlace(latLng) {
   geocoder.geocode({location: latLng}, function(results) {
     try {
       const cityName = results
-      	.find(result => result.types.includes('locality'))
+        .find(result => result.types.includes('locality'))
         .address_components[0]
         .long_name;
 
@@ -489,25 +495,25 @@ export function addPlace(latLng) {
 
 ```javascript{4,10,18}
 /* sidebar.js */
-import { getPlaces, subscribe } from './dataService'
+import { getPlaces, subscribe } from './dataService';
 
 function renderCities(placesArray) {
-  const cityListElement = document.getElementById('citiesList')
+  const cityListElement = document.getElementById('citiesList');
 
-  cityListElement.innerHTML = ''
+  cityListElement.innerHTML = '';
 
   // getPlaces 함수 호출을 placesArray로 교체
   placesArray.forEach(place => {
-    const cityElement = document.createElement('div')
-    cityElement.innerText = place.name
-    cityListElement.appendChild(cityElement)
-  })
+    const cityElement = document.createElement('div');
+    cityElement.innerText = place.name;
+    cityListElement.appendChild(cityElement);
+  });
 }
 
 // 초기 값으로 getPlaces() 전달
-renderCities(getPlaces())
+renderCities(getPlaces());
 
-subscribe(renderCities)
+subscribe(renderCities);
 ```
 
 이렇게 다양한 활용 방법이 있습니다. 다른 액션을 처리하기 위해 새로운 주제(혹은 채널)을 만들 수도 있습니다. 마찬가지로 `publish` 와 `subscribe` 함수를 전혀 다른 코드 파일로 분리하여 활용할 수도 있습니다. 하지만 지금 단계에선 그렇게 하지 않아도 충분합니다. 아래의 영상은 여태 작성한 예제로 만들어진 앱을 시연하는 영상입니다.
