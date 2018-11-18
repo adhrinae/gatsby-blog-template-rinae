@@ -42,7 +42,7 @@ tags:
 - 회원 등록 및 인증
   - 이메일과 비밀번호로 회원 가입
   - JWT로 인증 (토큰은 LocalStorage에 저장)
-- 사용금액, 내용 입력
+- 사용금액, 내용 입력
   - 수입은 녹색, 지출은 빨강색으로 표시
   - 각 아이템을 클릭하면 바로 수정 가능, 삭제 버튼을 누르면 삭제
 - 수입, 지출을 필터링하여 보기
@@ -131,7 +131,7 @@ gem 'jwt'
 # ...
 ```
 
-`bcrypt` 젬은 비밀번호 생성에 특화된 단방향 해시 함수를 지원합니다.  
+`bcrypt` 젬은 비밀번호 생성에 특화된 단방향 해시 함수를 지원합니다.
 간단한 사용법을 알려드리면 `BCrypt::Password.create('password')` 로 해시 다이제스트를 생성하고, `BCrypt::Password.new(digest)` 로 해시 다이제스트가 본래 비밀번호와 일치하는지 검사합니다.
 
 너무나 당연하면서 중요한 이야기지만 웹 개발자로서 복잡한 보안 알고리즘을 직접 구현하면 관리 및 취약점을 파악하기가 어렵기 때문에 차라리 `bcrypt` 처럼 검증된 라이브러리를 사용하시길 추천합니다. 비슷한 예로 Rails에서 사용자 인증과 관련한 부분은 되도록이면 Devise 젬을 사용하길 권장하는 것 처럼요.
@@ -185,7 +185,7 @@ bundle exec hanami generate action api auth#sign_in --skip-view
 bundle exec hanami generate action api auth#sign_up --skip-view
 ```
 
-action 뒤에 `api` 는 제가 사용할 앱 이름입니다. 기본값은 web으로 되어 있지만, [하나미 가이드의 Command Line 부분을 참고하시면](http://hanamirb.org/guides/command-line/generators/) 다른 앱을 생성하거나 삭제하는 등 액션을 실행할 수 있습니다.
+action 뒤에 `api` 는 제가 사용할 앱 이름입니다. 기본값은 web으로 되어 있지만, [하나미 가이드의 Command Line 부분을 참고하시면](http://hanamirb.org/guides/command-line/generators/) 다른 앱을 생성하거나 삭제하는 등 액션을 실행할 수 있습니다.
 
 `--skip-view` 는 뷰와 관련된 템플릿 파일이나 뷰 클래스 및 테스트를 생성하지 않는 커맨드입니다. 우리는 하나미를 순순히 API 서버로 사용할 것이기 때문에 미리 입력해주어야 불필요한 파일을 만들지 않게 됩니다.
 

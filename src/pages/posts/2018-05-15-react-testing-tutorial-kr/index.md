@@ -792,7 +792,7 @@ cd src
 touch App.snapshot.js
 ```
 
-그리고 `App`, `Counter` 컴포넌트에 대한 스냅샷 테스트를 작성합니다. 보통 스냅샷 테스트는 최소한 아래의 양식을 가지고 있습니다.
+그리고 `App`, `Counter` 컴포넌트에 대한 스냅샷 테스트를 작성합니다. 보통 스냅샷 테스트는 최소한 아래의 양식을 가지고 있습니다.
 
 ```jsx
 import React from 'react';
