@@ -113,3 +113,11 @@ OOP는 경직된 데이터 구조를 요구합니다. 그리고 데이터 구조
 
 저는 이 글에 관한 코멘트와 링크 제보를 받고 있으며 아래에 내용을 추가하고자 합니다.
 - [Simon Hardy-Francis's answer to Is C++ slower than C? If yes, is the difference significant? - Quora](https://www.quora.com/Is-C%2B%2B-slower-than-C-If-yes-is-the-difference-significant/answer/Simon-Hardy-Francis)
+
+---
+
+## 역주
+
+이 글을 읽으신 모든 분들께 [아샬](https://twitter.com/ahastudio)님이 남기신 다음의 피드백을 같이 보시길 강력하게 권해드립니다. 글타래이기 때문에 트윗을 클릭하여 연결된 트윗을 다 보시면 됩니다.
+
+<blockquote class="twitter-tweet" data-lang="ko"><p lang="ko" dir="ltr">“OOP를 빨리 잊을 수록 여러분과 여러분의 소프트웨어에 좋습니다”란 글에 대한 짧은 코멘트. <a href="https://t.co/pWixio8pm8">https://t.co/pWixio8pm8</a><br><br>1. 클래스가 해롭다고 하는데 특별한 논거가 없어서 공감하기도 어렵고 반론하기도 어려움. 클래스를 잘못 만드는 이유는 오히려 데이터 중심에서 못 벗어나서인 경우가 더 많음.</p>&mdash; Ashal aka JOKER (@ahastudio) <a href="https://twitter.com/ahastudio/status/1077247692223332353?ref_src=twsrc%5Etfw">2018년 12월 24일</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
