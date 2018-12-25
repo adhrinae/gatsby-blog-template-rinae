@@ -8,7 +8,7 @@ tags:
   - OOP
   - Programming
 coverImageUrl: 'https://images.unsplash.com/photo-1514880448122-7e417213b996?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1953&q=80'
-description: 'OOP를 향한 신랄한 비판 번역 (not about functional programming)'
+description: 'OOP를 향한 신랄한 비판(?) 번역 (not about functional programming) - 비판적으로 읽어주세요'
 ---
 
 ## 번역 머리말
@@ -18,7 +18,7 @@ description: 'OOP를 향한 신랄한 비판 번역 (not about functional progra
 
 ---
 
-> 객체 지향 프로그래밍은 캘리포니아에서 시작 된 것 중 이례적으로 나쁜 아이디어입니다.  
+> 객체 지향 프로그래밍은 캘리포니아에서만 나올 수 있는 것 중 이례적으로 나쁜 아이디어입니다.  
 > (Object-oriented programming is an exceptionally bad idea which could only have originated in California.)  
 > -- Edsger W. Dijkstra  
 
