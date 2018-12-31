@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 
 import Hero from '../components/Hero'
@@ -14,6 +15,9 @@ const Tags = ({ pageContext }) => {
 
     return (
       <Layout>
+        <Helmet>
+          <title>About {tagName} | Rinae's devlog</title>
+        </Helmet>
         <Hero
           title={`${
             postCount > 1 ? postCount + ' posts' : postCount + ' post'
@@ -31,6 +35,9 @@ const Tags = ({ pageContext }) => {
 
     return (
       <Layout>
+        <Helmet>
+          <title>Tags | Rinae's devlog</title>
+        </Helmet>
         <Hero
           title="List of all tags"
           subtitle="sorted by the frequency being tagged"

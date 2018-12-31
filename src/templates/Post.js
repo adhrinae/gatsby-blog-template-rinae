@@ -57,7 +57,7 @@ class Post extends React.Component {
             <div className="column is-10-mobile is-offset-1-mobile is-8-tablet is-offset-2-tablet is-8-desktop is-offset-2-desktop">
               <div className="content">
                 <Helmet>
-                  <title>{title} - Rinae's devlog</title>
+                  <title>{title} | Rinae's devlog</title>
                   <meta property="og:type" content="article" />
                   <meta property="og:title" content={title} />
                   <meta property="og:description" content={ogDescription} />
