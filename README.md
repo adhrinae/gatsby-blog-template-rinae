@@ -3,17 +3,17 @@
 ## Entering development mode
 
 ```shell
-yarn develop
+yarn start
 ```
 
 ## Deployment
 
-**The remote repository must be set up** as a github pages repo.
+I use CircleCI to build and deploy this blog
 
-```shell
-# set the origin repo
-git remote add origin YOUR-REPO
+```
+# In CI environment, after building blog as static files
+yarn build
 
-# then deploy the blog
-yarn deploy
+# Then publish it to my github pages repository
+yarn publish
 ```
