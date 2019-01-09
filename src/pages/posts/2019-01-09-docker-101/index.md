@@ -5,7 +5,7 @@ title: 'Dockerfile 작성부터 이미지 배포까지 간단 요약'
 category: 'Docker'
 tags:
   - Docker
-description: 'Docker를 처음 써보면서 Dockerfile 작성부터 허브에 이미지 배포까지 경험한 과정한 간단히 정리했습니다'
+description: 'Docker를 처음 써보면서 Dockerfile 작성부터 허브에 이미지 배포까지 경험한 과정을 간단히 정리했습니다'
 ---
 
 ## Dockerfile 작성까지
