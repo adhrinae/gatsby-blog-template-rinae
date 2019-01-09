@@ -14,7 +14,7 @@ description: 'Docker를 처음 써보면서 Dockerfile 작성부터 허브에 �
 
 그래서 **답답하니 내가 뛴다** 정신을 발휘하여 `Dockerfile` 을 새로 작성하고 [Docker Hub](hub.docker.com)에 배포하는 작업까지 도전해보았다. 너무 당연한거지만 최소한 로컬 머신에 Docker CLI(보통은 Docker Desktop과 함께 설치)는 설치되어 있어야 한다.
 
-이번 이미지를 사용하면서 베이스가 된 이미지는 Node.js 공식 도커 이미지이다. 그 중에 `node:dubnium-alpine` 을 사용했다. `dubnium` 은 v10 의 코드 이름이며, v10이 현재 LTS이기 일일이 버전을 지정해주는 것 보다 낫다고 판단했다. `lts-alpine` 이라고 하면 메이저 lts가 바뀌었을 때 큰 문제가 발생할 수도 있다고(김칫국을 마시고) 지양했다. `alpine` 은 알파인 리눅스 기반 이미지를 이야기하는데, 컨테이너 환경에 특화된 가볍고 안정적인 리눅스라는 것 같다.
+이번 이미지를 사용하면서 베이스가 된 이미지는 Node.js 공식 도커 이미지이다. 그 중에 `node:dubnium-alpine` 을 사용했다. `dubnium` 은 v10 의 코드 이름이며, v10이 현재 LTS니까 일일이 버전을 지정해주는 것 보다 낫다고 판단했다. `lts-alpine` 이라고 하면 메이저 lts가 바뀌었을 때 큰 문제가 발생할 수도 있다고(김칫국을 마시고) 지양했다. `alpine` 은 알파인 리눅스 기반 이미지를 이야기하는데, 컨테이너 환경에 특화된 가볍고 안정적인 리눅스라는 것 같다.
 
 그래서 기존에 사용하던 이미지의 코드 및, [Circle CI의 문서](https://circleci.com/docs/2.0/custom-images/) 등을 참고하여 처음으로 `Dockerfile` 을 만들어봤다.
 
