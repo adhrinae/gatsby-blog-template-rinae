@@ -12,7 +12,7 @@ description: 'Docker를 처음 써보면서 Dockerfile 작성부터 허브에 �
 
 지금까지 회사에서 CI 빌드 및 배포용 도커 이미지로 [이런 것을](https://github.com/kriasoft/docker-node-ci) 쓰고 있었는데, 만들어진지 1년이 넘은 설정인데다 타겟 노드 버전에 문제가 있어 이번에 새로 이미지를 만들어보기로 했다. 주된 원인은 `create-react-app` v2.1 기반으로 프로젝트를 변경하다 보니 주요 의존성 중 하나인 `eslint` 가 해당 노드 버전을 지원하지 않는다는 에러가 나면서 CI가 실패했기 때문이다.
 
-그래서 **답답하니 내가 뛴다** 정신을 발휘하여 `Dockerfile` 을 새로 작성하고 [Docker Hub](hub.docker.com)에 배포하는 작업까지 도전해보았다. 너무 당연한거지만 최소한 로컬 머신에 Docker CLI(보통은 Docker Desktop과 함께 설치)는 설치되어 있어야 한다.
+그래서 **답답하니 내가 뛴다** 정신을 발휘하여 `Dockerfile` 을 새로 작성하고 [Docker Hub](https://hub.docker.com)에 배포하는 작업까지 도전해보았다. 너무 당연한거지만 최소한 로컬 머신에 Docker CLI(보통은 Docker Desktop과 함께 설치)는 설치되어 있어야 한다.
 
 이번 이미지를 사용하면서 베이스가 된 이미지는 Node.js 공식 도커 이미지이다. 그 중에 `node:dubnium-alpine` 을 사용했다. `dubnium` 은 v10 의 코드 이름이며, v10이 현재 LTS니까 일일이 버전을 지정해주는 것 보다 낫다고 판단했다. `lts-alpine` 이라고 하면 메이저 lts가 바뀌었을 때 큰 문제가 발생할 수도 있다고(김칫국을 마시고) 지양했다. `alpine` 은 알파인 리눅스 기반 이미지를 이야기하는데, 컨테이너 환경에 특화된 가볍고 안정적인 리눅스라는 것 같다.
 
