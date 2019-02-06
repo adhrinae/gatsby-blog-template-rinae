@@ -71,7 +71,7 @@ class Post extends React.Component {
                 </Helmet>
                 <div className="post-title">
                   <h1>{title}</h1>
-                  <span className="has-text-grey-light is-size-6">{date}</span>
+                  <time className="has-text-grey-light is-size-6">{date}</time>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 <hr />
