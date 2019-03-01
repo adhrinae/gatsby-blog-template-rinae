@@ -16,7 +16,8 @@ function initUtterances() {
     repo: 'adhrinae/gatsby-blog',
     branch: 'master',
     async: true,
-    'issue-term': 'pathname'
+    'issue-term': 'pathname',
+    crossorigin: 'anonymous'
   }
   const utterances = document.createElement('script')
   const aboutBox = document.querySelector('.box')

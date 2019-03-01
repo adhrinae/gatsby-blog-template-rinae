@@ -18,13 +18,14 @@ const About = () => (
             <strong>Rinae (Ahn Dohyung)</strong>
             <br />
             Frontend developer. Highly interested in ReactJS, Testing and
-            Programming Fundamentals & Typescript. Also, Have the enthusiasm for learning and
-            sharing new programming issues, especially with translation.
+            Programming Fundamentals & Typescript. Also, Have the enthusiasm for
+            learning and sharing new programming issues, especially with
+            translation.
           </p>
         </div>
         <nav className="level">
           <div className="level-left">
-            <a href="mailto:adhrinae@gmail.com" className="level-item">
+            <a href="mailto:me@rinae.dev" className="level-item">
               <span className="icon has-text-info">
                 <i className="mdi mdi-24px mdi-email" />
               </span>

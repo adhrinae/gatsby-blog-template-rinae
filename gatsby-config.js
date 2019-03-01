@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://adhrinae.github.io',
+    siteUrl: 'https://rinae.dev',
     title: "Rinae's devlog",
     description: 'about Translation, Ruby, Javascript, Practical Dev etc.',
     author: {
       name: 'Ahn Dohyung (Rinae)',
-      email: 'adhrinae@gmail.com',
+      email: 'me@rinae.dev',
       twitter: 'https://twitter.com/adhrinae',
-      github: 'https://github.com/adhrinae',
-    },
+      github: 'https://github.com/adhrinae'
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -18,23 +18,23 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://adhrinae.github.io',
+        host: 'https://rinae.dev',
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+            policy: [{ userAgent: '*', disallow: ['/'] }]
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }],
-          },
-        },
-      },
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        name: 'pages'
+      }
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -43,27 +43,27 @@ module.exports = {
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
-              classPrefix: 'language-',
-            },
+              classPrefix: 'language-'
+            }
           },
           {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 790,
-              linkImagesToOriginal: false,
-            },
+              linkImagesToOriginal: false
+            }
           },
           'gatsby-remark-autolink-headers',
-          'gatsby-remark-copy-linked-files',
-        ],
-      },
+          'gatsby-remark-copy-linked-files'
+        ]
+      }
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-110939745-1',
-        anonymize: true,
-      },
+        anonymize: true
+      }
     },
     {
       resolve: 'gatsby-plugin-feed',
@@ -87,7 +87,7 @@ module.exports = {
                   description: edge.node.excerpt,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [{ 'content:encoded': edge.node.html }]
                 })
               })
             },
@@ -111,11 +111,11 @@ module.exports = {
                 }
               }
             `,
-            output: `/rss.xml`,
-          },
-        ],
-      },
+            output: `/rss.xml`
+          }
+        ]
+      }
     },
-    'gatsby-remark-responsive-iframe',
-  ],
+    'gatsby-remark-responsive-iframe'
+  ]
 }
