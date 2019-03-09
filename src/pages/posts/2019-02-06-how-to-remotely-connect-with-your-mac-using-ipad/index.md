@@ -76,3 +76,21 @@ description: '아이패드로 일반적인 개발을 해보고자 시도했던 �
 아직 간단히 몇 줄을 수정한 뒤 커밋-푸시하는 정도의 단계만 수행해봤지만, 조금만 익숙해지면 하루 정도 밖에 나와서 아이패드로만 일을 하거나 사이드 프로젝트를 하는 정도는 별로 무리 없이 진행할 수 없으리라 기대한다. 특히 Jump Desktop 쪽에서 아이패드 해상도 대응 업데이트만 되면 더더욱 괜찮은 환경을 구축할 수 있을 것 같다.
 
 아직까진 삽질만 잔뜩 하고 눈에 띄는 성과가 없긴 하지만 몇개월 더 이런 방식으로 아이패드를 활용해 보면 어떻게 느끼게 될지 궁금하다.
+
+## 추가 업데이트
+
+(2019년 3월 9일) Jump Desktop의 iOS, Mac Client 버전이 업데이트 되면서 불편했던 점이 아주 많이 개선되었다. 업데이트 로그는 다음과 같다.
+
+- Dynamic resolution switching for Fluid connections: Jump can now update the remote resolution to match your local device's resolution and orientation.
+- Wake-On-Lan for automatic connections: Jump will try to wake up your remote machine before connecting (there are some limitations here though)
+- Better keyboard compatibility with games and 3D applications
+- Horizontal scrolling support.
+- Synchronize automatic connection names
+- Physical keyboard improvements
+- External screen improvements
+
+업데이트 내역에서 중요한 개선은 3가지였다. 가로 스크롤이 가능해졌고, 원격 접속 상태에서 아이패드 해상도에 맞게 조절이 가능하며 블루투스 키보드 입력 시 제대로 입력되지 않았던 일부 키 동작들이 수정된 것이다.
+
+덕분에 실질적으로 서브 랩탑을 대체할만한 수준까지 사용성이 많이 좋아졌다고 생각한다. Screens는 그저 사용성 좋은 VNC 애플리케이션에 지나지 않아서 이제는 자주 쓰기 힘들 것 같다.
+
+![Jump desktop improved](https://cl.ly/08a4aacac432/remote-connect-2.png)
