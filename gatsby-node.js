@@ -18,7 +18,7 @@ const createTagPages = (createPage, edges) => {
   createPage({
     path: '/tags',
     component: tagTemplate,
-    context: { postsByTags },
+    context: { postsByTags }
   })
 
   // create individual tag page
@@ -28,8 +28,8 @@ const createTagPages = (createPage, edges) => {
       component: tagTemplate,
       context: {
         postsByTag,
-        tagName,
-      },
+        tagName
+      }
     })
   })
 }
@@ -75,7 +75,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,
-        context: {},
+        context: {}
       })
     })
   })

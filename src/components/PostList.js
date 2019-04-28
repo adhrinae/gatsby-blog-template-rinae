@@ -11,8 +11,9 @@ const PostList = ({ postsData }) => (
             <strong>{post.frontmatter.title}</strong>
           </Link>
           {' - '}
-          <time>{post.frontmatter.date}</time>{' '}
-          <span className="tag is-info">{post.frontmatter.category}</span>
+          <time dateTime="post-frontmatter.date">
+            {post.frontmatter.date}
+          </time>{' '}
         </p>
         <p>{post.excerpt}</p>
       </div>

@@ -1,13 +1,13 @@
 {
-  "name": "@adhrinae/blog",
-  "description": "rinae's blog talking about better development",
+  "name": "gatsby-blog-template-rinae",
+  "description": "Blog Template Powered by Gatsby.js (not maintained)",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/adhrinae/adhrinae.github.io"
+    "url": "https://github.com/adhrinae/gatsby-blog-template-rinae.io"
   },
   "version": "1.0.0",
-  "author": "adhrinae@gmail.com",
+  "author": "me@rinae.dev",
   "keywords": [
     "gatsby",
     "blog",
@@ -23,7 +23,7 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "publish": "gh-pages -d public -b master -r 'git@github.com:adhrinae/adhrinae.github.io.git'",
+    "publish": "gh-pages -d public -b master -r 'git@github.com:YOUR_GITHUB_ACCOUT/YOUR_GITHUB_PAGE_REPO.git'",
     "deploy:ci": "npm run build && npm run publish",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'"
   },

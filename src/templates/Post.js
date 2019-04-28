@@ -7,7 +7,7 @@ import About from '../components/About'
 import Layout from '../components/Layout'
 import TagList from '../components/TagList'
 
-import defaultOgImage from '../assets/blog-og-default-image.png'
+import defaultOgImage from '../assets/blog-og-default-image.png' // YOUR_DEFAULT_OPENGRAPH_IMAGE_FILE
 import './Post.style.scss'
 
 function initUtterances() {

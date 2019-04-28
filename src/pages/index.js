@@ -33,13 +33,15 @@ const IndexPage = props => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.shape({
-        node: PropTypes.shape({
-          excerpt: PropTypes.string,
-          id: PropTypes.string,
-          frontmatter: PropTypes.object
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            excerpt: PropTypes.string,
+            id: PropTypes.string,
+            frontmatter: PropTypes.object
+          })
         })
-      }))
+      )
     })
   })
 }
@@ -56,7 +58,6 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            category
             date(formatString: "YYYY/MM/DD")
             path
           }

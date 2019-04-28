@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import Footer from './Footer'
 import Header from './Header'
 
-import favicon from '../assets/favicon.ico'
+import favicon from '../assets/favicon.ico' // YOUR_FAVICON_FILE
 
 import '@mdi/font/scss/materialdesignicons.scss'
 import 'bulma'

@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://rinae.dev',
-    title: "Rinae's devlog",
-    description: 'about Translation, Ruby, Javascript, Practical Dev etc.',
+    siteUrl: 'YOUR_SITE_URL',
+    title: 'YOUR_SITE_TITLE',
+    description: 'YOUR_SITE_DESCRIPTION',
     author: {
-      name: 'Ahn Dohyung (Rinae)',
-      email: 'me@rinae.dev',
-      twitter: 'https://twitter.com/adhrinae',
-      github: 'https://github.com/adhrinae'
+      name: 'YOUR_NAME',
+      email: 'YOUR_EMAIL',
+      twitter: 'YOUR_TWITTER_ADDRESS',
+      github: 'YOUR_GITHUB_ADDRESS'
     }
   },
   plugins: [
@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://rinae.dev',
+        host: 'YOUR_SITE_URL',
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]
@@ -61,7 +61,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: 'UA-110939745-1',
+        trackingId: 'YOUR_GA_TRACKING_ID',
         anonymize: true
       }
     },
